@@ -1,0 +1,105 @@
+.catalog-page{
+    background: url('/assets/map1.jpg') center center no-repeat;
+    background-size: cover;
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+    
+}
+.title-catalog{
+    font-family: 'Handlee', cursive;
+    font-size: 4em;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    color: white;
+    text-align: center;
+}
+
+
+/* .offersList-section {
+    display: flex;
+    margin-top: 5em;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-evenly;
+    width: 95%;
+} */
+
+/* background: linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)),
+    url(/assets/background.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 2rem 0;
+    height: 100vh; */
+
+.card-container {
+    height: 30em;
+    width: 22em;
+    background-color: transparent;
+    /* padding: 1em; */
+    border-radius: 1em;
+    box-shadow: 0 0 1em;
+    float: left;
+    border: none;
+
+    background: rgb(125, 154, 177);
+    background: radial-gradient(circle, rgba(125, 154, 177, 1) 31%, rgba(2, 0, 36, 1) 100%, rgba(125, 154, 177, 1) 100%);
+
+}
+
+.card {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    min-width: 0;
+    /* width: 20em; */
+    height: 100%;
+    border-radius: 0.5em;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    gap: 1em;
+}
+
+.card-img-top {
+    height: 18em;
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.card-body {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 1em;
+    font-size: large;
+
+}
+
+.card-footer {
+    border-radius: 0.5em;
+    padding: 0.7em 1em;
+    width: 10em;
+    text-align: center;
+    background-color: rgb(32, 129, 178);
+}
+
+.btn-primary {
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.no-boats {
+    font-family: 'Handlee', cursive;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 5em;
+}

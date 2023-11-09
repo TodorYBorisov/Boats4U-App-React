@@ -1,7 +1,8 @@
 h3 {
-    font-size: 24px;
+    font-size: 1.5em;
     color:rgb(104, 102, 102);
     text-transform: uppercase;
+    font-family: 'Handlee', cursive;
   }
   
   .team-description-wrapper {
@@ -10,7 +11,6 @@ h3 {
     padding: 2.5rem 0;
     text-align: center;
     color:rgb(104, 102, 102);
-    
   }
   
   .team-description p{

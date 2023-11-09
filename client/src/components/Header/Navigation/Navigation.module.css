@@ -7,8 +7,7 @@
     position: fixed;
     top: 1.5em;
     left: 12em;
-
-    
+    z-index: 2;
 }
 
 img {
@@ -38,18 +37,17 @@ ul {
     font-size: 1em;
     text-transform: uppercase;
     font-weight: 700;
-
+    border-bottom: 0.2em solid lightblue;
 }
 
 .main-nav ul li:hover {
     cursor: pointer;
     border: 1px solid white;
     border-radius: 0.7em;
-
+    
     /* border-bottom: 0.2em solid lightblue; */
-
 }
-.main-nav ul li a {
-   background-color: none;
 
+.main-nav ul li a {
+    background-color: none;
 }

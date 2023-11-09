@@ -5,6 +5,8 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Team from './components/Team/Team';
 import Home from './components/Home/Home';
+import Catalog from './components/Catalog/Catalog';
+
 
 function App() {
 
@@ -12,11 +14,13 @@ function App() {
   return (
     <>
       <Header />
-      <main className='main-container'>
-        <Home/>
-        <Team/>
 
-      </main>
+      <Home />
+
+      <Catalog/>
+
+      <Team />
+      
       <Footer />
     </>
   );

@@ -1,0 +1,55 @@
+.main-nav {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 1.5em;
+    left: 12em;
+
+    
+}
+
+img {
+    width: 100px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.main-nav ul li {
+    padding: 1em;
+    display: inline-block;
+    list-style-type: none;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+
+.main-nav ul li:hover {
+    cursor: pointer;
+    border: 1px solid white;
+    border-radius: 0.7em;
+
+    /* border-bottom: 0.2em solid lightblue; */
+
+}
+.main-nav ul li a {
+   background-color: none;
+
+}

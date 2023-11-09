@@ -1,0 +1,42 @@
+h3 {
+    font-size: 24px;
+    color:rgb(104, 102, 102);
+    text-transform: uppercase;
+  }
+  
+  .team-description-wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2.5rem 0;
+    text-align: center;
+    color:rgb(104, 102, 102);
+    
+  }
+  
+  .team-description p{
+    font-style: italic;
+    padding-bottom: 2.5rem;
+    color:rgb(104, 102, 102);
+  }
+  
+  .team-description{
+    background: rgb(231, 242, 245);
+  }
+  
+  .team-description ul {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  .team-description ul li img {
+    width: 15em;
+    height: 15em;
+    padding-bottom: 0.3rem;
+    border-radius: 1em;
+    
+  }
+  
+  .team-description ul li > p:nth-child(2) {
+    padding: 0;
+  }

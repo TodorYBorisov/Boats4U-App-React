@@ -9,7 +9,7 @@ export default function Home() {
                     <h1>It's time to start your adventures!</h1>
                     <p>Integer blandit libero sit amet massa interdum fermentum</p>
                     <p>Veniam, facilis.</p>
-                    <button>YOUR NEXT JOURNEY</button>
+                    <button className={styles['button']}>YOUR NEXT JOURNEY</button>
                 </section>
             </div> 
         </main>

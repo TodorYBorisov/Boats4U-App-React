@@ -50,12 +50,15 @@ img {
     width: 10em;
     text-align: center;
     background-color: rgb(32, 129, 178);
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
 .btn-primary {
     color: white;
     font-weight: bold;
-    cursor: pointer;
-    
 }
 
+.card-footer:hover{
+    transform: scale(1.2);
+}

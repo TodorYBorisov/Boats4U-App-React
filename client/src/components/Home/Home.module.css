@@ -31,7 +31,8 @@ section{
 
 .header-title button {
     padding: 0.7em 0.9em;
-    color: rgb(104, 102, 102);
+    /* color: rgb(104, 102, 102); */
+    color: white;
     font-weight: bold;
     font-size: 1em;
     border: none;
@@ -40,4 +41,13 @@ section{
     margin-top: 2em;
     /* border: 2px solid rgb(104, 102, 102); */
     cursor: pointer;
+    background-color: rgb(32, 129, 178);
+    
+}
+
+button{
+    transition: transform 0.3s;
+}
+.button:hover{
+    transform: scale(1.2);
 }

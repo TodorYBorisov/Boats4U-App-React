@@ -1,0 +1,31 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(130, 158, 179);
+    /* position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%; */
+}
+
+p {
+    padding: 0.5em 0;
+    color: white;
+}
+
+.social-media-icons {
+    padding-bottom: 0.5em;
+}
+
+.social-media-icons a {
+    padding: 0 0.2em;
+    color: white;
+    font-size: 2em;
+}
+
+span {
+    /* color: black; */
+    font-weight: 500;
+}

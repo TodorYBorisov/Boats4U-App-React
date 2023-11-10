@@ -4,6 +4,7 @@ import styles from './Catalog.module.css';
 import OffersList from './OfferList/OffersList';
 
 
+
 export default function Catalog() {
     // const [loading, setLoading] = useState(false);
     // const [offers, setOffers] = useState([]);

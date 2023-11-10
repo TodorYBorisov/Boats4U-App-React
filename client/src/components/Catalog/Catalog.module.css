@@ -1,12 +1,12 @@
-.catalog-page{
+.catalog-page {
     background: url('/assets/map1.jpg') center center no-repeat;
     background-size: cover;
     /* display: flex; */
     /* justify-content: space-evenly; */
     height: 100vh;
-    
 }
-.title-catalog{
+
+.title-catalog {
     font-family: 'Handlee', cursive;
     font-size: 4em;
     padding-top: 1em;
@@ -14,7 +14,6 @@
     color: white;
     text-align: center;
 }
-
 
 /* .offersList-section {
     display: flex;

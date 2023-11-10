@@ -1,12 +1,11 @@
 .main-nav {
+    background-color: rgb(0, 0, 0,0.3);
     display: flex;
-    width: 80%;
+    width: 100vw;
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     position: fixed;
-    top: 1.5em;
-    left: 12em;
     z-index: 2;
 }
 
@@ -37,7 +36,6 @@ ul {
     font-size: 1em;
     text-transform: uppercase;
     font-weight: 700;
-    border-bottom: 0.2em solid lightblue;
 }
 
 .main-nav ul li:hover {

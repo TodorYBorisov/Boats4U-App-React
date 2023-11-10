@@ -1,0 +1,58 @@
+.not-found {
+    padding-top: 6em;
+    background-image: url('/assets/404.jpg');
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 90vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 0;
+}
+
+.not-found-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-top: 3.8em; 
+}
+
+.not-found-home h2{
+    font-size: 4em;
+}
+
+.not-found-home h2:nth-child(2){
+    font-size: 3em;
+}
+
+.not-found-home p {
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* button */
+.not-found-home button a{
+    font-size: 1em; 
+}
+
+.not-found-home button {
+    padding: 0.7em 0.9em;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.3rem;
+    margin-top: 1em;
+    cursor: pointer;
+    background-color: rgb(32, 129, 178);
+}
+
+button{
+    transition: transform 0.3s;
+}
+.button:hover{
+    transform: scale(1.2);
+}

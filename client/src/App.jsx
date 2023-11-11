@@ -7,7 +7,8 @@ import Team from './components/Team/Team';
 import Home from './components/Home/Home';
 import Catalog from './components/Catalog/Catalog';
 import NotFound from './components/NotFound/NotFound';
-import Search from './components/Search/Search';
+
+import Search1 from './components/Search1/Search1';
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
 
       <Team />
       <NotFound/>
-      <Search/>
+      
+      <Search1/>
       
       <Footer />
     </>

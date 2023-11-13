@@ -3,16 +3,27 @@
     background-size: cover;
     /* display: flex; */
     /* justify-content: space-evenly; */
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .title-catalog {
     font-family: 'Handlee', cursive;
     font-size: 4em;
-    padding-top: 1em;
+    padding-top: 2em;
     padding-bottom: 0.5em;
     color: white;
     text-align: center;
+}
+.offersList-section {
+    display: flex;
+    /* margin-top: 5em; */
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-evenly;
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 2em;
+
 }
 
 /* .offersList-section {
@@ -99,7 +110,8 @@ img {
     font-size: 2em;
     color: white;
     text-align: center;
-    width: 100vw;
+    /* width: 100vw; */
     height: 100vh;
     padding-top: 5em;
 }
+

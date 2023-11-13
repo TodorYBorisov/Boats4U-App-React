@@ -1,0 +1,132 @@
+/* body {
+    position: relative;
+} */
+
+.register {
+    background: linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)), url(/assets/background.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 8em 0;
+    height: 100vh;
+}
+
+form label {
+    gap: 0.5em;
+}
+
+
+.register-box {
+    color: white;
+    width: 23em;
+    /* height: 43em; */
+    margin: auto;
+    background-color: rgba(38, 26, 29, 0.6);
+    border: 0.2em solid white;
+    border-radius: 1.2em;
+    padding-top: 1em;
+}
+
+.register-box h1 {
+    text-align: center;
+    padding-top: 0.3em;
+    /* font-family: 'Handlee', cursive; */
+}
+
+/* .register-box h4 {
+    margin-top: 10px;
+    text-align: center;
+} */
+
+.register-box form {
+    width: 18em;
+    margin-left: 1.5em;
+}
+
+.register-box form label {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.register-box form input {
+    width: 24em;
+    height: 2.5em;
+    padding-left: 0.5em;
+    border: none;
+    border: 0.2em solid gray;
+    border-radius: 0.5em;
+    outline: none;
+}
+
+/* .register-box input[type="submit"] {
+    width: 320px;
+    height: 35px;
+    margin-top: 30px;
+    border: none;
+    background-color: rgb(112, 150, 230);
+    color: white;
+    font-size: 15px;
+} */
+
+.register-box p {
+    text-align: center;
+    padding: 1.5em;
+    font-size: 1em;
+
+}
+
+.register-box p>a {
+    color: rgb(112, 150, 230);
+    text-decoration: none;
+
+}
+
+/* ===================== */
+.register-box form .gender {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.register-box form .gender label {
+    display: inline-block;
+    margin: 0;
+}
+
+.register-box form .gender input[type="radio"] {
+    margin-right: 5px;
+}
+
+.register-box form .gender input[type="radio"] {
+    transform: scale(0.6);
+    margin-right: 5px;
+}
+
+
+form .button-register {
+    display: flex;
+    padding: 0.7em 0.9em;
+    /* color: rgb(104, 102, 102); */
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    border: none;
+    border-radius: 0.3rem;
+    background: rgb(231, 238, 240);
+    margin-top: 1em;
+    margin-left: 7em;
+    /* border: 2px solid rgb(104, 102, 102); */
+    cursor: pointer;
+    background-color: rgb(32, 129, 178);
+
+}
+
+.button-register {
+    transition: transform 0.3s;
+}
+
+.button-register:hover {
+    transform: scale(1.2);
+}
+

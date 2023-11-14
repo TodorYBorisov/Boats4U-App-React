@@ -1,28 +1,55 @@
-h3 {
-    font-size: 1.5em;
-    color: white;
-    margin-top: 2em;
-  }
+.about-h {
+  font-size: 3em;
+  color: white;
+  margin-top: 2em;
+  font-family: 'Handlee', cursive;
+  text-align: center;
+}
+
+.about-us {
+  margin: 0 auto;
+  padding: 2.5rem 0;
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  background: linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)),
+    url(/assets/background1.jpg) no-repeat center center;
+  background-size: cover;
+}
+
+span {
+  color: white;
+}
+
+.about-us p {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.5em;
+  color: black;
+}
+
+
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding-top: 1.5em;
+  background: linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)),
+  url(/assets/background1.jpg) no-repeat center center;
+background-size: cover;
+}
+
+.location h2 {
+  text-align: center;
+  margin: 0 auto;
   
-  .about-us {
-    /* width: 80%; */
-    margin: 0 auto;
-    padding: 2.5rem 0;
-    text-align: center;
-    color:white;
-    background: url('/assets/map.jpg') no-repeat center center;
-    /* background-size: cover; */
-    height: 25em;
-  }
-  
-  .about-us p:nth-child(2) {
-    font-style: italic;
-    padding-bottom: 2.5rem;
-    color: white;
-  }
-  
-  .about-us p:nth-child(3){
-    width: 60%;
-    margin: 0 auto;
-    color:white;
-  }
+
+}
+
+.map1,
+.map2 {
+  display: flex;
+  height: 28em;
+justify-content:center;
+margin-bottom: 2em;
+}

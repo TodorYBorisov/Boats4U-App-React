@@ -1,15 +1,39 @@
-// import RingLoader from 'react-spinners/RingLoader';
-// import { useState, useEffect } from 'react';
-import OffersList from '../Catalog/OfferList/OffersList';
+import { useState } from 'react';
+import * as dataService from '../../services/dataService';
 import styles from './Search1.module.css';
 
 
 
-
 export default function Search1() {
-    // const [loading, setLoading] = useState(false);
-    // const [offers, setOffers] = useState([]);
+    document.title = 'Search';
 
+    const [form, setForm] = useState({ search: '' });
+
+    const [searchResults, setSearchResults] = useState([]);
+
+
+
+    function onSubmit(event) {
+        event.preventDefault();
+
+        dataService.getSearchedItem(form.search)
+            .then(results => {
+                setSearchResults(results);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        // searchHandler(form);
+    }
+
+    function onChange(event) {
+        setForm(state => ({
+            ...state,
+            [event.target.name]: event.target.value
+        }));
+    }
+
+    console.log(form.search);
 
     return (
         <>
@@ -19,13 +43,13 @@ export default function Search1() {
 
                 <section className={styles['search-container']}>
 
-                    <form className={styles['search-form']} >
+                    <form className={styles['search-form']} onSubmit={onSubmit}>
                         <input
-                            //value={form.search}
+                            value={form.search}
                             name="search"
                             type="text"
                             placeholder="Search here..."
-                        //onChange={onChange}
+                            onChange={onChange}
                         />
 
                         <button className={styles['search-button']} type="submit">
@@ -34,14 +58,19 @@ export default function Search1() {
                     </form>
                 </section>
 
-                {/* 
-                {loading ?
-                    <RingLoader color="#36d7b7" />
-                    :
-                    <OffersList offers={offers} />
-                } */}
+                {/* Render search results */}
+                {searchResults.length > 0 && (
+                    <section className={styles['search-results']}>
+                        <h2>Search Results:</h2>
+                        <ul>
+                            {searchResults.map(result => (
+                                <li key={result.id}>{result.name}</li>
+                            ))}
+                        </ul>
+                    </section>
+                )}
 
-                <OffersList />
+
             </section>
         </>
     );

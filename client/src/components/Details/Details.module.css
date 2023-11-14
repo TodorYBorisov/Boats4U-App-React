@@ -70,12 +70,13 @@ font-weight:700;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-
+    justify-content: center;
+    gap: 1em;
 }
 
 .trip-desc h5{
 font-size: 1.5em;
-margin-bottom: 1em;
+/* margin-bottom: 1em; */
 color: black;
 }
 
@@ -86,13 +87,13 @@ color: black;
 
 
 .trip-desc textarea{
-    width: 16em;
+    width: 20em;
     height: 8em;
     font-size: 1.5em;
     background-color: rgba(33, 31, 31, 0.5);
     font-family: 'Handlee', cursive;
     color: white;
-    border-radius: 0.5em;
+    border-radius: 0.2em;
     border-color: none;
 }
 

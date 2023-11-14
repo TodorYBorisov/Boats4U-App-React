@@ -1,7 +1,5 @@
 /* eslint-disable react/prop-types */
 
-
-// import { Link } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import styles from './OfferItem.module.css';
 
@@ -25,7 +23,7 @@ export default function OfferItem({
                     <h5 className={styles['card-info']}><i className="fas fa-hand-holding-usd"></i> Price: <span>{price}</span> EUR</h5>
                 </div>
                 <div className={styles['card-footer']}>
-                    < Link to={`/details/${id}`} className={styles['btn-primary']}>Read More</Link>
+                    < Link to={`/boats/details/${id}`} className={styles['btn-primary']}>Read More</Link>
                 </div>
             </div>
         </div>

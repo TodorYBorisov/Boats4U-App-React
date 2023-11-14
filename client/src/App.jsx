@@ -1,41 +1,41 @@
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 
-
-import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+import About from './components/About/About';
+import Footer from './components/Footer/Footer';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
-import Team from './components/Team/Team';
 import Home from './components/Home/Home';
 import Catalog from './components/Catalog/Catalog';
-import NotFound from './components/NotFound/NotFound';
-
-import Search1 from './components/Search1/Search1';
 import Details from './components/Details/Details';
+import Profile from './components/Profile/Profile';
+import NotFound from './components/NotFound/NotFound';
+import Search1 from './components/Search1/Search1';
 
 
 function App() {
 
-
   return (
     <>
       <Header />
+      <main className='main-container'>
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/boats' element={<Catalog />}></Route>
+          <Route path='/boats/details/:id' element={<Details />}></Route>
 
-      <Home />
+          <Route path='/about' element={<About />}></Route>
+          <Route path='/register' element={<Register />}></Route>
+          <Route path='/login' element={<Login />}></Route>
+          <Route path='/profile' element={<Profile />}></Route>
 
-      <Catalog/>
 
-      <Team />
-      <NotFound/>
-      
-      <Search1/>
-      
-      <Register/>
+          <Route path='/search' element={<Search1 />}></Route>
 
-      <Login/>
-
-      <Details/>
-      
+          <Route path='*' element={<NotFound />}></Route>
+        </Routes>
+      </main>
       <Footer />
     </>
   );

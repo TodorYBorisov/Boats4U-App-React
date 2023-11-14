@@ -9,7 +9,7 @@ import Loader from '../Loader/Loader.jsx';
 
 
 export default function Catalog() {
-
+    document.title = 'Boats';
     const [boats, setBoats] = useState([]);
     const [loading, setLoading] = useState(false);
 

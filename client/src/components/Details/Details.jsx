@@ -53,7 +53,7 @@ export default function Details() {
                 <img src={details.imageUrl} alt="" />
                 <div className={styles['trip-desc']}>
                     <h5>Additional infomarion</h5>
-                    <textarea className={styles['lead']} value={details.description} ></textarea>
+                    <textarea className={styles['lead']} defaultValue={details.description} ></textarea>
                     <h5>Rent price: <span className={styles['lead']}>{details.price}</span> EUR</h5>
 
 

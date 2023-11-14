@@ -17,31 +17,32 @@ export async function createBoat(data) {
 }
 
 //заявка за взимане на конкретната книга/item на която сме влезли да води Към Details
-export async function getShoeById(id) {
-    return get(`/data/cars/${id}`);
+export async function getBoatById(id) {
+    return get(`/data/boats/${id}`);
 }
 
 // заявка за изтриваме елемента по id в details секцията
-export async function deleteShoe(id) {
-    return del(`/data/cars/${id}`);
+export async function deleteBoat(id) {
+    return del(`/data/boats/${id}`);
 }
 
 // заявка за Edit на елемента
-export async function editShoe(id, data) {
-    return put(`/data/cars/${id}`, data);
+export async function editBoat(id, data) {
+    return put(`/data/boats/${id}`, data);
 }
 
 // тук правим заявка да си вземем само неща които ние сме създали по id
-export async function getMyCars(userId) {
-    return get(`/data/cars?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`);
+export async function getMyBoats(userId) {
+    return get(`/data/boats?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`);
 }
 
 // //заявки за бонуса=======================
 
 // заявка за търсене на нещо в масива от data
 export function getSearchedItem(query) {
-    return get(`/data/cars?where=year%3D${query}`);
+    return get(`/data/boats?where=name%20LIKE%20%22${query}%22`);
 }
+// /data/boats?where=name%20LIKE%20%22${query}%22
 
 // // заявка за да видим кой са лайкнатите
 // export async function likeBook(bookId) {
@@ -57,4 +58,14 @@ export function getSearchedItem(query) {
 // }
 
 //=================================
+
+const host = 'http://localhost:3030/data/';
+export const getLastTree = async () => {
+    const response = await fetch(`${host}/boats`);
+    const result = await response.json();
+
+    const data = Object.values(result).slice(-3);
+    
+    return data;
+};
 

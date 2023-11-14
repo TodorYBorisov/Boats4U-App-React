@@ -1,7 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import styles from './Register.module.css';
+import { Link } from 'react-router-dom';
 
 export default function Register() {
+    document.title = 'Sign Up';
+
+
     return (
         <div className={styles['register']}>
             <div className={styles['register-box']}>
@@ -62,7 +66,7 @@ export default function Register() {
                 </form>
 
                 <div className={styles['last-p']}>
-                    <p>Already have an account? Login here</p>
+                    <p>Already have an account? <Link to='/login'>Login here</Link></p>
                 </div>
 
             </div >

@@ -1,6 +1,10 @@
 import styles from './Login.module.css';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
+    document.title = 'Login';
+
+
     return (
         <div className={styles['login']}>
 
@@ -18,7 +22,7 @@ export default function Login() {
                 </form>
 
                 <div className={styles['last-p']}>
-                    <p>Not have an account? Sign Up here</p>
+                    <p>Not have an account? <Link to='/register'>Sign Up here</Link></p>
                 </div>
             </div >
 

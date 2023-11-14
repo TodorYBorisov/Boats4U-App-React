@@ -5,6 +5,7 @@ import styles from './Profile.module.css';
 import { useState, useEffect } from 'react';
 
 export default function Profile() {
+    document.title = 'Profile';
 
     const [boats, setBoats] = useState([]);
     const [loading, setLoading] = useState(false);

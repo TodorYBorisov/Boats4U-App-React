@@ -10,7 +10,7 @@ export default function NotFound() {
                 <h2>404</h2>
                 <h2>Page Not Found</h2>
                 <p>The Page you are looking for doesn't exist or another error occurred, go to </p>
-                <button className={styles['button']}><Link to={'/'}>HOME</Link></button>
+                <Link to={'/'}><button className={styles['button']}>HOME</button></Link>
             </div>
         </section>
     );

@@ -1,9 +1,19 @@
+/* .main-container{
+    background: linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)),
+    url(/assets/background.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+} */
 
 .site-home{
     background: linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)),
     url(/assets/background.jpg) no-repeat center center;
     background-size: cover;
-    padding: 2rem 0;
+    padding: 2em 0;
     height: 100vh;
 }
 section{
@@ -12,6 +22,8 @@ section{
 }
 
 .header-title {
+    display: flex;
+    flex-direction: column;
     color: white;
     margin: 0 auto;
     text-align: center;

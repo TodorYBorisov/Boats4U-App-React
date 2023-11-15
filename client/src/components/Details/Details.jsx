@@ -68,7 +68,7 @@ export default function Details() {
                         {/* <span>Already booked. Don't be late!</span> */}
                     </div>
                 </div>
-                <p className={styles['total-likes']}>User likes: 5</p>
+                <p className={styles['total-likes']}>User likes {0} <i className="fa-solid fa-heart"></i></p>
             </div>
         </div>
     );

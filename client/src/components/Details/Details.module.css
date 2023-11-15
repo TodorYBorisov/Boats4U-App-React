@@ -71,7 +71,7 @@ font-weight:700;
     justify-content: flex-start;
     align-items: center;
     justify-content: center;
-    gap: 1em;
+    /* gap: 1em; */
 }
 
 .trip-desc h5{
@@ -88,7 +88,7 @@ color: black;
 
 .trip-desc textarea{
     width: 20em;
-    height: 8em;
+    height: 9em;
     font-size: 1.5em;
     background-color: rgba(33, 31, 31, 0.5);
     font-family: 'Handlee', cursive;
@@ -202,4 +202,7 @@ color: black;
     color: black;
     border-bottom: 4px solid lightblue;
     height: 2em;
+}
+.total-likes i{
+    color: red;
 }

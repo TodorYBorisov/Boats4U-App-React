@@ -53,6 +53,7 @@ form label {
     border: 0.2em solid gray;
     border-radius: 0.5em;
     outline: none;
+    background: rgb(232, 240, 254);
 }
 
 /* .register-box input[type="submit"] {

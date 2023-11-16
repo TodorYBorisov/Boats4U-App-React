@@ -93,7 +93,8 @@ export default function Profile() {
                             </div>
                         }
                     </div>}
-
+                    <h2 className={styles['title-catalog']}>My Bookings</h2>
+                    {}
             </section>
 
         </div>

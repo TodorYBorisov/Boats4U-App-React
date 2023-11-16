@@ -1,6 +1,8 @@
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
+import { AuthContext } from './context/authContext';
+import useLocalStorage  from './hooks/useLocalStorage';
 import Header from './components/Header/Header';
 import About from './components/About/About';
 import Footer from './components/Footer/Footer';
@@ -16,29 +18,32 @@ import Create from './components/Create/Create';
 
 
 function App() {
+  const [auth, setAuth] = useLocalStorage('user');
 
   return (
     <>
-      <Header />
-      <main className='main-container'>
-        <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/boats' element={<Catalog />}></Route>
-          <Route path='/boats/details/:id' element={<Details />}></Route>
+      <AuthContext.Provider value={{auth, setAuth }}>
+        <Header />
+        <main className='main-container'>
+          <Routes>
+            <Route path='/' element={<Home />}></Route>
+            <Route path='/boats' element={<Catalog />}></Route>
+            <Route path='/boats/details/:id' element={<Details />}></Route>
 
-          <Route path='/about' element={<About />}></Route>
-          <Route path='/register' element={<Register />}></Route>
-          <Route path='/login' element={<Login />}></Route>
-          <Route path='/profile' element={<Profile />}></Route>
-          <Route path='/create' element={<Create/>}></Route>
-          
+            <Route path='/about' element={<About />}></Route>
+            <Route path='/register' element={<Register />}></Route>
+            <Route path='/login' element={<Login />}></Route>
+            <Route path='/profile' element={<Profile />}></Route>
+            <Route path='/create' element={<Create />}></Route>
 
-          <Route path='/search' element={<Search1 />}></Route>
 
-          <Route path='*' element={<NotFound />}></Route>
-        </Routes>
-      </main>
-      <Footer />
+            <Route path='/search' element={<Search1 />}></Route>
+
+            <Route path='*' element={<NotFound />}></Route>
+          </Routes>
+        </main>
+      </AuthContext.Provider>
+        <Footer />
     </>
   );
 }

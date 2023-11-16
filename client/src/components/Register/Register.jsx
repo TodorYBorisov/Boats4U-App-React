@@ -1,10 +1,42 @@
-/* eslint-disable react/no-unescaped-entities */
+
 import styles from './Register.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../context/authContext';
+import * as userServices from '../../services/userServices';
 
 export default function Register() {
     document.title = 'Sign Up';
 
+    const navigate = useNavigate();
+    const { setAuth } = useContext(AuthContext);
+    const [userData, setuserData] = useState({
+        username: '',
+        email: '',
+        phone: '',
+        gender: '',
+        password: '',
+        rePassword: '',
+    });
+
+    function onChange(event) {
+        setuserData(state => ({ ...state, [event.target.name]: event.target.value }));
+    }
+
+    async function onSubmit(event) {
+        event.preventDefault();
+
+        try {
+            const { username, email, phone, gender, password } = userData;
+            const user = await userServices.register(username, email, phone, gender, password);
+            setAuth(user);
+
+            navigate('/');
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <div className={styles['register']}>
@@ -12,9 +44,9 @@ export default function Register() {
                 <h1>Sign Up</h1>
                 {/* <h4>It's free and only take a minute</h4> */}
 
-                <form>
+                <form onSubmit={onSubmit}>
                     <label htmlFor="username"><span><i className="fa-solid fa-user"></i></span>Username</label>
-                    <input type="text" name="username" placeholder="Username.." />
+                    <input onChange={onChange} value={userData.username} type="text" name="username" placeholder="Username.." />
 
                     <label htmlFor="email">
                         <span>
@@ -22,15 +54,15 @@ export default function Register() {
                         </span>
                         Email
                     </label>
-                    <input type="email" name="email" placeholder="Email.." />
+                    <input onChange={onChange} value={userData.email} type="email" name="email" placeholder="Email.." />
 
-                    <label htmlFor="tel">
+                    <label htmlFor="phone">
                         <span>
                             <i className="fa-solid fa-phone-volume"></i>
                         </span>
                         Phone
                     </label>
-                    <input type="text" name="tel" id="tel" placeholder="+359 88 888 888" />
+                    <input onChange={onChange} value={userData.phone} type="text" name="phone" id="phone" placeholder="+359 88 888 888" />
 
                     <label htmlFor="password">
                         <span>
@@ -38,7 +70,7 @@ export default function Register() {
                         </span>
                         Password
                     </label>
-                    <input type="password" name="password" placeholder="Password.." />
+                    <input onChange={onChange} value={userData.password} type="password" name="password" placeholder="Password.." />
 
                     <label htmlFor="rePassword">
                         <span>
@@ -46,7 +78,7 @@ export default function Register() {
                         </span>
                         Confirm Password
                     </label>
-                    <input type="password" name="rePassword" placeholder="Confirm Password.." />
+                    <input onChange={onChange} value={userData.rePassword} type="password" name="rePassword" placeholder="Confirm Password.." />
 
                     <label htmlFor="gender">
                         <span>
@@ -55,9 +87,9 @@ export default function Register() {
                         Gender
                     </label>
                     <div className={styles['gender']}>
-                        <input type="radio" id="female" name="gender" value="female" />
+                        <input onChange={onChange} checked={userData.gender === 'female'} type="radio" id="female" name="gender" value="female" />
                         <label htmlFor="female">Female</label>
-                        <input type="radio" id="male" name="gender" value="male" />
+                        <input onChange={onChange} checked={userData.gender === 'male'} type="radio" id="male" name="gender" value="male" />
                         <label htmlFor="male">Male</label>
                     </div>
 

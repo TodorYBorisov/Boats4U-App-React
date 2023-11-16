@@ -2,7 +2,12 @@ import OfferItem from '../Catalog/OfferList/OfferItem/OfferItem';
 import * as dataService from '../../services/dataService';
 import Loader from '../Loader/Loader';
 import styles from './Profile.module.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+
+import { AuthContext } from '../../context/authContext';
+
+// import { getUser } from '../../services/userServices';
+
 
 export default function Profile() {
     document.title = 'Profile';
@@ -10,11 +15,27 @@ export default function Profile() {
     const [boats, setBoats] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    console.log(boats);
+    const { auth } = useContext(AuthContext);
+    // const [user, setUser] = useState(null);
+    // console.log(user);
+
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const data = getUser();
+    //             setUser(data);
+
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     };
+    //     fetchData();
+    // }, [auth]);
+
 
     useEffect(() => {
         setLoading(true);
-        dataService.getAllData()
+        dataService.getMyBoats(auth._id)
             .then(result => {
                 setBoats(result);
             })
@@ -22,9 +43,10 @@ export default function Profile() {
                 console.error('Error fetching data:', error);
                 setLoading(true);
             })
-            .finally(()=> setLoading(false));
-    }, []);
+            .finally(() => setLoading(false));
+    }, [auth._id]);
 
+    const genderImage = `/assets/${auth.gender}.png`;
 
     return (
 
@@ -32,12 +54,12 @@ export default function Profile() {
 
             <div className={styles['profile-data']}>
 
-                <img src="/assets/male.png" alt="" />
+                <img src={genderImage} alt={auth.gender} />
 
                 <div className={styles['user-data']}>
-                    <p>Username: <span>Toshko</span></p>
-                    <p><i className="fa-solid fa-envelope"></i> Email: <span>toshko@abv.bg</span></p>
-                    <p><i className="fa-solid fa-phone-volume" ></i> Phone: <span>+359 88 888 888</span></p>
+                    <p>Username: <span>{auth.username}</span></p>
+                    <p><i className="fa-solid fa-envelope"></i> Email: <span>{auth.email}</span></p>
+                    <p><i className="fa-solid fa-phone-volume" ></i> Phone: <span>{auth.phone}</span></p>
                 </div>
 
             </div>
@@ -71,7 +93,7 @@ export default function Profile() {
                             </div>
                         }
                     </div>}
-      
+
             </section>
 
         </div>

@@ -10,10 +10,10 @@ async function request(method, url, data) {
         headers: {}
     };
 
-    const userData = getUserData();
+    const user = getUserData();
     // ако имаме данни за потребителя сетваме headers
-    if (userData) {
-        const token = userData.accessToken;
+    if (user) {
+        const token = user.accessToken;
         options.headers['X-Authorization'] = token;
     }
 

@@ -2,14 +2,14 @@ import { del, get, post, put } from './apiServices.js';
 // // ВАЖНО !! провери всички пътища !! от word
 
 // заявка за всички данни от базата
-export async function getAllData() {
-    return get('/data/boats?sortBy=_createdOn%20desc');
-}
+// export async function getAllData() {
+//     return get('/data/boats?sortBy=_createdOn%20desc');
+// }
 
 //заявка за всички данни от базата без сортиране по дата на създаване
-// export async function getAllData() {
-//     return get('/data/boats');
-// }
+export async function getAllData() {
+    return get('/data/boats');
+}
 
 //заявка за създаване на която подаваем деструктурирания обект от формата
 export async function createBoat(data) {

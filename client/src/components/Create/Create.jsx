@@ -1,11 +1,11 @@
 import styles from './Create.module.css';
 import { useNavigate } from 'react-router-dom';
 import * as dataService from '../../services/dataService';
-import { useState} from 'react';
+import { useState } from 'react';
 
 export default function Create() {
   document.title = 'Create';
-  
+
 
   const navigate = useNavigate();
   // const [disableButton, setDisableButton] = useState(false);
@@ -31,23 +31,18 @@ export default function Create() {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value, }));
   }
 
-
-  const onSubmit = async (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
+    const formData = Object.fromEntries(new FormData(event.target));
 
-    //data е обект който идва от формат аи подаваме на сървиса
-    // const data = Object.fromEntries(new FormData(event.currentTarget));
-
-    try {
-      await dataService.createBoat(formData);
-      navigate('/boats');
-    } catch (error) {
-      console.log(error);
-    }
-
+    dataService.createBoat(formData)
+      .then(() => {
+        navigate('/boats');
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
-
-
 
   return (
     <>
@@ -55,7 +50,7 @@ export default function Create() {
         <div className={`${styles['container']} ${styles['offer-trip']}`}>
           <h1>Offer trip</h1>
           <div>
-            <form  onSubmit={onSubmit} >
+            <form onSubmit={onSubmit} >
               <div className={styles['offer-label']}>
                 <label htmlFor="startPoint"> <i className="fas fa-map-marker-alt"></i> Starting Port</label>
                 <label htmlFor="endPoint"> <i className="fas fa-map-marker-alt"></i> End Port</label>

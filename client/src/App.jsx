@@ -15,6 +15,7 @@ import Profile from './components/Profile/Profile';
 import NotFound from './components/NotFound/NotFound';
 import Search1 from './components/Search1/Search1';
 import Create from './components/Create/Create';
+import Edit from './components/Edit/Edit';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path='/' element={<Home />}></Route>
             <Route path='/boats' element={<Catalog />}></Route>
             <Route path='/boats/details/:id' element={<Details />}></Route>
+            <Route path='/boats/edit/:id' element={<Edit />}></Route>
 
             <Route path='/about' element={<About />}></Route>
             <Route path='/register' element={<Register />}></Route>

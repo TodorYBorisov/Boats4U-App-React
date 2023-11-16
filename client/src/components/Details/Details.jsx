@@ -3,7 +3,7 @@ import styles from './Details.module.css';
 import * as dataService from '../../services/dataService';
 
 import { useState, useEffect } from 'react';
-import { useParams, } from 'react-router-dom';
+import { Link, useParams, } from 'react-router-dom';
 
 export default function Details() {
     document.title = 'Details';
@@ -58,14 +58,13 @@ export default function Details() {
 
 
                     <div className={styles['buttons']}>
-                        {/* <button className={styles['delete']}><i className="fa-solid fa-trash" ></i> Delete</button>
-                        <button className={styles['edit']}><i className="fa-solid fa-user-pen"></i> Edit</button> */}
-
-
+                        <button className={styles['delete']}><i className="fa-solid fa-trash" ></i> Delete</button>
+                       <Link to={`/boats/edit/${id}`}><button className={styles['edit']}><i className="fa-solid fa-user-pen"></i> Edit</button></Link>
+                        
                         <button className={styles['book']}><i className="fa-solid fa-shoe-prints"></i> Book</button>
                         <button className={styles['like']}><i className="fa-solid fa-heart"></i> Like</button>
 
-                        {/* <span>Already booked. Don't be late!</span> */}
+                        <span>Already booked. Don't be late!</span>
                     </div>
                 </div>
                 <p className={styles['total-likes']}>User likes {0} <i className="fa-solid fa-heart"></i></p>

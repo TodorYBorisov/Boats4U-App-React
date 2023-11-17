@@ -1,4 +1,5 @@
 
+import Carousel from '../Carousel/Carousel';
 import styles from './Team.module.css';
 
 export default function Team() {
@@ -8,7 +9,8 @@ export default function Team() {
             <div className={styles['team-description-wrapper']}>
                 <h3>A few of our exceptional captains.</h3>
                 <p>Experienced professionals with a demonstrated history of success and expertise in their field.</p>
-                <ul>
+                <Carousel/>
+                {/* <ul>
                     <li>
                         <img src="/assets/captain1.jpg" alt="pic" />
                         <p>Alessandro Lombardi</p>
@@ -34,7 +36,7 @@ export default function Team() {
                         <p>Reneta Milton</p>
                         <p>Lisboa, Portugal</p>
                     </li>
-                </ul>
+                </ul> */}
             </div>
         </section>
     );

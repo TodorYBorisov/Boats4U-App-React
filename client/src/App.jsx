@@ -16,6 +16,7 @@ import NotFound from './components/NotFound/NotFound';
 import Search1 from './components/Search1/Search1';
 import Create from './components/Create/Create';
 import Edit from './components/Edit/Edit';
+import Weather from './components/Weather/Weather';
 
 
 function App() {
@@ -38,7 +39,8 @@ function App() {
             <Route path='/profile' element={<Profile />}></Route>
             <Route path='/create' element={<Create />}></Route>
 
-
+            
+            <Route path='/weather' element={<Weather />}></Route>
             <Route path='/search' element={<Search1 />}></Route>
 
             <Route path='*' element={<NotFound />}></Route>

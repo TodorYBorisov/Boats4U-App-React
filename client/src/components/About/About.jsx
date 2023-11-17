@@ -20,7 +20,6 @@ export default function About() {
                     <iframe width="50%" height="100%" src="https://maps.google.com/maps?q=varna&t=&z=14&ie=UTF8&iwloc=&output=embed"
                         title="Example Website" loading="lazy" />
                 </div> */}
-
                 <div className={styles['map2']}>
                     <iframe width="50%" height="100%" src="https://maps.google.com/maps?q=thesalloniki&t=&z=14&ie=UTF8&iwloc=&output=embed"
                         title="Example Website" loading="lazy" />

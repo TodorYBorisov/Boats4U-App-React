@@ -26,14 +26,12 @@ export default function Search1() {
         // searchHandler(form);
     }
 
+    //на база стария стей, сетваме нов обект в който подменяме евент таргета
     function onChange(event) {
-        setForm(state => ({
-            ...state,
-            [event.target.name]: event.target.value
-        }));
+        setForm(state => ({ ...state, [event.target.name]: event.target.value }));
     }
 
-    console.log(form.search);
+    console.log(form);
 
     return (
         <>

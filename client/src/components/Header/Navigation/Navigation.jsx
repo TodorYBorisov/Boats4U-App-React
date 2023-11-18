@@ -37,7 +37,7 @@ export default function Navigation() {
           <>
             <li><Link to="/create"><i className="fa-solid fa-circle-plus"></i> Create</Link></li>
             <li><Link to="/search"><i className="fa-solid fa-magnifying-glass"></i> Search</Link></li>
-            <li><a href="#"><i className="fa-solid fa-cloud-sun"></i> Weather</a></li>
+            <li><Link to='/weather'><i className="fa-solid fa-cloud-sun"></i> Weather</Link></li>
             <li><Link to="/profile"><i className="fa-solid fa-address-card"></i> Profile</Link></li>
             <li onClick={logoutHandler}><Link><i className="fa-solid fa-right-from-bracket"></i> Logout</Link></li>
           </>

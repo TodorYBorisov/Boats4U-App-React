@@ -13,10 +13,7 @@ export default function Search(searchHandler) {
     }
 
     function onChange(event) {
-        setForm(state => ({
-            ...state,
-            [event.target.name]: event.target.value
-        }));
+        setForm(state => ({ ...state, [event.target.name]: event.target.value }));
     }
 
     return (
@@ -49,7 +46,7 @@ export default function Search(searchHandler) {
                 } */}
 
             {/* <OffersList /> */}
-              
+
             {/* <div className={styles['no-boats']}>
                 <h2>Sorry, no boats found for you.</h2>
                 <h2>Please visit us again later!</h2>

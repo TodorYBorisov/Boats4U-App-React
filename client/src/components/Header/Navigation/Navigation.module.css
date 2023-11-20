@@ -49,3 +49,8 @@ ul {
 .main-nav ul li a {
     background-color: none;
 }
+
+.main-nav ul p{
+display: inline-block;
+font-weight: 700;
+}

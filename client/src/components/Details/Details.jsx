@@ -2,24 +2,98 @@
 import styles from './Details.module.css';
 import * as dataService from '../../services/dataService';
 
-import { useState, useEffect } from 'react';
-import { Link, useParams, } from 'react-router-dom';
+import { AuthContext } from '../../context/authContext';
+import { useState, useEffect,useContext} from 'react'; //useContext
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
 export default function Details() {
     document.title = 'Details';
-
+    const navigate = useNavigate();
     const { id } = useParams();
     const [details, setDetails] = useState({});
+    const [isOwner, setIsOwner] = useState(false);
+    const { auth } = useContext(AuthContext);
+    // const [likes, setLikes] = useState([]);
 
-    console.log(details);
+    async function onDelete(event) {
+        event.preventDefault();
+        const confirm = window.confirm('Are you sure you want to delete this boat?');
+        if (confirm) {
+            try {
+                await dataService.deleteBoat(details._id);
+                navigate('/boats');
+
+            } catch (error) {
+                console.log('Error deleting data:', error);
+            }
+        }
+    }
+
+    // useEffect(() => {
+    //     dataService.like(auth._id, id)
+    //         .then(likes => {
+    //             setLikes(likes);
+    //         })
+    //         .catch((error) => console.log(error));
+    // }, []);
+
+
+    // useEffect(() => {
+    //     dataService.getBoatById(id)
+    //         .then(result => setDetails(result))
+    //         .catch((error) => console.log(error));
+    // }, [id]);
 
 
     useEffect(() => {
+       
         dataService.getBoatById(id)
-            .then(result => setDetails(result))
-            .catch((error) => console.log(error));
-    }, [id]);
+            .then(data => {
+                setIsOwner(auth?._id === data._ownerId);
+                setDetails(data);
+            })
+            .catch(error => {
+                // Handle errors if the getById function fails
+                console.error('Error fetching data:', error);
+                
+            });
+    }, [id, auth]);
+    
 
+
+
+    // const onLikeButton = () => {
+    //     //ако потребителя е собсвеника на лодката
+    //     if (auth._id === details._ownerId) {
+    //         return;
+    //     }
+
+    //     if (likes.includes(auth._id)) {
+    //         window.alert('You cannot like again!');
+    //         return;
+    //     }
+
+    //     dataService.like(id)
+    //         .then(prevLikes => setLikes(prevLikes))
+    //         .catch((error) => console.log(error));
+
+    // };
+
+    const ownerButtons = (
+        <>
+            <button className={styles['delete']} onClick={onDelete}><i className="fa-solid fa-trash" ></i> Delete</button>
+            <Link to={`/boats/edit/${id}`}><button className={styles['edit']}><i className="fa-solid fa-user-pen"></i> Edit</button></Link>
+        </>
+    );
+
+    const userButtons = (
+        <>
+            <button className={styles['book']}><i className="fa-solid fa-shoe-prints"></i> Book</button>
+            <button className={styles['like']} ><i className="fa-solid fa-heart"></i> Like</button>
+
+            <span>Already booked. Don't be late!</span>
+        </>
+    );
 
     return (
         <div className={styles['boat-details']}  >
@@ -53,21 +127,25 @@ export default function Details() {
                 <img src={details.imageUrl} alt="" />
                 <div className={styles['trip-desc']}>
                     <h5>Additional infomarion</h5>
-                    <textarea className={styles['lead']} defaultValue={details.description} ></textarea>
+                    <textarea className={styles['lead']} value={details.description} ></textarea>
                     <h5>Rent price: <span className={styles['lead']}>{details.price}</span> EUR</h5>
 
 
                     <div className={styles['buttons']}>
-                        <button className={styles['delete']}><i className="fa-solid fa-trash" ></i> Delete</button>
-                       <Link to={`/boats/edit/${id}`}><button className={styles['edit']}><i className="fa-solid fa-user-pen"></i> Edit</button></Link>
+
+                        {/* {auth._id && (auth._id == details._ownerId ? ownerButtons : userButtons)} */}
+                        {auth && (isOwner ? ownerButtons : userButtons)}
                         
+                        {/* <button className={styles['delete']} onClick={onDelete}><i className="fa-solid fa-trash" ></i> Delete</button>
+                        <Link to={`/boats/edit/${id}`}><button className={styles['edit']}><i className="fa-solid fa-user-pen"></i> Edit</button></Link>
+
                         <button className={styles['book']}><i className="fa-solid fa-shoe-prints"></i> Book</button>
                         <button className={styles['like']}><i className="fa-solid fa-heart"></i> Like</button>
 
-                        <span>Already booked. Don't be late!</span>
+                        <span>Already booked. Don't be late!</span> */}
                     </div>
                 </div>
-                <p className={styles['total-likes']}>User likes {0} <i className="fa-solid fa-heart"></i></p>
+                <p className={styles['total-likes']} >User likes {0} <i className="fa-solid fa-heart"></i></p>
             </div>
         </div>
     );

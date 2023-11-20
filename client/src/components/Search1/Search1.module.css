@@ -1,17 +1,17 @@
-body{
+/* body{
     background:linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)),
     url('/assets/map1.jpg') center center no-repeat;
     background-size: cover;
-}
+} */
 
 
 .catalog-page {
-    /* background:linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)),
+    background:linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)),
     url('/assets/map1.jpg') center center no-repeat;
-    background-size: cover; */
+    background-size: cover;
     /* display: flex; */
     /* justify-content: space-evenly; */
-    /* height: 100vh; */
+    height: 100vh;
 
 }
 

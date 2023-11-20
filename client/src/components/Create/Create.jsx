@@ -94,7 +94,7 @@ export default function Create() {
                             </div>
                             <div className={styles['form-group']}>
                                 <label htmlFor="description">Description</label>
-                                <textarea onChange={onChange} className={styles['form-control']} id={styles['description']} placeholder="Any additional information about the trip" name="description" defaultValue={formData.description}></textarea>
+                                <textarea onChange={onChange} className={styles['form-control']} id={styles['description']} placeholder="Any additional information about the trip" name="description" value={formData.description}></textarea>
                             </div>
                             <button type="submit" className={`${styles['btn']} ${styles['btn-primary']}`}>SUBMIT</button>
                         </form>

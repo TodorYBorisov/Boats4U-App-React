@@ -39,7 +39,7 @@ export default function Navigation() {
             <li><Link to='/weather'><i className="fa-solid fa-cloud-sun"></i> Weather</Link></li>
             <li><Link to="/profile"><i className="fa-solid fa-address-card"></i> Profile</Link></li>
             <li onClick={logoutHandler}><Link><i className="fa-solid fa-right-from-bracket"></i> Logout</Link></li>
-            <p>Welcome, {auth.username}</p>
+            <p>Welcome, <span>{auth.username}</span></p>
           </>
           :
           <>

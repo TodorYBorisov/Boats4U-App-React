@@ -1,5 +1,5 @@
 .main-nav {
-    background-color: rgb(0, 0, 0,0.3);
+    background-color: rgb(0, 0, 0, 0.3);
     display: flex;
     width: 100vw;
     margin: 0 auto;
@@ -42,7 +42,7 @@ ul {
     cursor: pointer;
     border: 1px solid white;
     border-radius: 0.7em;
-    
+
     /* border-bottom: 0.2em solid lightblue; */
 }
 
@@ -50,7 +50,12 @@ ul {
     background-color: none;
 }
 
-.main-nav ul p{
-display: inline-block;
-font-weight: 700;
+.main-nav ul p {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.main-nav ul p span {
+    color: black;
+    font-weight: 700;
 }

@@ -54,17 +54,15 @@ export default function Details() {
             });
     }, [id, auth]);
 
-    useEffect(()=>{
+    useEffect(() => {
         const storedLikes = localStorage.getItem('likes');
-        if(storedLikes){
+        if (storedLikes) {
             setLikes(JSON.parse(storedLikes));
         }
     },[]);
 
-
     const onLikeClick = () => {
-      
-        if (likes.some(like => like._ownerId === auth._id)) {
+        if(likes.some(like => like._ownerId === auth._id)) {
             window.alert('You cannot like this twice!');
             return;
         }
@@ -79,12 +77,9 @@ export default function Details() {
             });
     };
 
-
-    useEffect(()=>{
-        localStorage.setItem('likes',JSON.stringify(likes));
+    useEffect(() => {
+        localStorage.setItem('likes', JSON.stringify(likes));
     });
-
-
 
 
     const ownerButtons = (
@@ -97,7 +92,7 @@ export default function Details() {
     const userButtons = (
         <>
             <button className={styles['book']}><i className="fa-solid fa-shoe-prints"></i> Book</button>
-            <button className={styles['like']} onClick={onLikeClick} disabled={ isLiked} ><i className="fa-solid fa-heart"></i> Like</button>
+            <button className={styles['like']} onClick={onLikeClick} disabled={isLiked} ><i className="fa-solid fa-heart"></i> Like</button>
 
             {/* <span>Already booked. Don't be late!</span> */}
         </>
@@ -169,7 +164,7 @@ export default function Details() {
 // },[]);
 
 
-// const onLikeClick = (id) => {
+// const onLikeClick = () => {
 
 //     if (likes.some(like => like._ownerId === auth._id)) {
 //         window.alert('You cannot like this twice!');

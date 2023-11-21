@@ -21,10 +21,10 @@ import Weather from './components/Weather/Weather';
 
 function App() {
   const [auth, setAuth] = useLocalStorage('user');
-
+//isAuthenticated: !!auth.email
   return (
     <>
-      <AuthContext.Provider value={{auth, setAuth }}>
+      <AuthContext.Provider value={{auth, setAuth}}>
         <Header />
         <main className='main-container'>
           <Routes>

@@ -3,7 +3,7 @@ import styles from './Details.module.css';
 import * as dataService from '../../services/dataService';
 
 import { AuthContext } from '../../context/authContext';
-import { useState, useEffect,useContext} from 'react'; //useContext
+import { useState, useEffect, useContext } from 'react'; //useContext
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
 export default function Details() {
@@ -13,7 +13,9 @@ export default function Details() {
     const [details, setDetails] = useState({});
     const [isOwner, setIsOwner] = useState(false);
     const { auth } = useContext(AuthContext);
-    // const [likes, setLikes] = useState([]);
+    const [likes, setLikes] = useState([]);
+    const [isLiked, setIsLiked] = useState(false);
+
 
     async function onDelete(event) {
         event.preventDefault();
@@ -30,23 +32,16 @@ export default function Details() {
     }
 
     // useEffect(() => {
-    //     dataService.like(auth._id, id)
+    //     dataService.getAllLikesForBoatById(id)
     //         .then(likes => {
-    //             setLikes(likes);
+    //             setLikes(state=>({...state, likes}));
     //         })
     //         .catch((error) => console.log(error));
     // }, []);
 
 
-    // useEffect(() => {
-    //     dataService.getBoatById(id)
-    //         .then(result => setDetails(result))
-    //         .catch((error) => console.log(error));
-    // }, [id]);
-
-
     useEffect(() => {
-       
+
         dataService.getBoatById(id)
             .then(data => {
                 setIsOwner(auth?._id === data._ownerId);
@@ -55,29 +50,42 @@ export default function Details() {
             .catch(error => {
                 // Handle errors if the getById function fails
                 console.error('Error fetching data:', error);
-                
+
             });
     }, [id, auth]);
-    
+
+    useEffect(()=>{
+        const storedLikes = localStorage.getItem('likes');
+        if(storedLikes){
+            setLikes(JSON.parse(storedLikes));
+        }
+    },[]);
+
+
+    const onLikeClick = () => {
+      
+        if (likes.some(like => like._ownerId === auth._id)) {
+            window.alert('You cannot like this twice!');
+            return;
+        }
+
+        dataService.likeBoat(id, auth._id)
+            .then(() => {
+                setLikes([...likes, { id, _ownerId: auth._id }]);
+                setIsLiked(true);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    };
+
+
+    useEffect(()=>{
+        localStorage.setItem('likes',JSON.stringify(likes));
+    });
 
 
 
-    // const onLikeButton = () => {
-    //     //ако потребителя е собсвеника на лодката
-    //     if (auth._id === details._ownerId) {
-    //         return;
-    //     }
-
-    //     if (likes.includes(auth._id)) {
-    //         window.alert('You cannot like again!');
-    //         return;
-    //     }
-
-    //     dataService.like(id)
-    //         .then(prevLikes => setLikes(prevLikes))
-    //         .catch((error) => console.log(error));
-
-    // };
 
     const ownerButtons = (
         <>
@@ -89,9 +97,9 @@ export default function Details() {
     const userButtons = (
         <>
             <button className={styles['book']}><i className="fa-solid fa-shoe-prints"></i> Book</button>
-            <button className={styles['like']} ><i className="fa-solid fa-heart"></i> Like</button>
+            <button className={styles['like']} onClick={onLikeClick} disabled={ isLiked} ><i className="fa-solid fa-heart"></i> Like</button>
 
-            <span>Already booked. Don't be late!</span>
+            {/* <span>Already booked. Don't be late!</span> */}
         </>
     );
 
@@ -133,9 +141,8 @@ export default function Details() {
 
                     <div className={styles['buttons']}>
 
-                        {/* {auth._id && (auth._id == details._ownerId ? ownerButtons : userButtons)} */}
                         {auth && (isOwner ? ownerButtons : userButtons)}
-                        
+
                         {/* <button className={styles['delete']} onClick={onDelete}><i className="fa-solid fa-trash" ></i> Delete</button>
                         <Link to={`/boats/edit/${id}`}><button className={styles['edit']}><i className="fa-solid fa-user-pen"></i> Edit</button></Link>
 
@@ -145,8 +152,41 @@ export default function Details() {
                         <span>Already booked. Don't be late!</span> */}
                     </div>
                 </div>
-                <p className={styles['total-likes']} >User likes {0} <i className="fa-solid fa-heart"></i></p>
+                <p className={styles['total-likes']} >User likes {likes?.length || 0} <i className="fa-solid fa-heart"></i></p>
             </div>
         </div>
     );
 }
+
+
+
+
+// useEffect(()=>{
+//     const storedLikes = localStorage.getItem('likes');
+//     if(storedLikes){
+//         setLikes(JSON.parse(storedLikes));
+//     }
+// },[]);
+
+
+// const onLikeClick = (id) => {
+
+//     if (likes.some(like => like._ownerId === auth._id)) {
+//         window.alert('You cannot like this twice!');
+//         return;
+//     }
+
+//     dataService.likeBoat(id, auth._id)
+//         .then(() => {
+//             setLikes([...likes, { id, _ownerId: auth._id }]);
+//             setIsLiked(true);
+//         })
+//         .catch((error) => {
+//             console.log(error);
+//         });
+// };
+
+
+// useEffect(()=>{
+//     localStorage.setItem('likes',JSON.stringify(likes));
+// });

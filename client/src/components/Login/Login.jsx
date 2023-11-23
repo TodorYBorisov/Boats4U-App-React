@@ -1,6 +1,6 @@
 import styles from './Login.module.css';
 import { Link, useNavigate } from 'react-router-dom';
-import { useContext } from 'react';
+import { useState, useContext } from 'react';
 import { AuthContext } from '../../context/authContext';
 import * as userServices from '../../services/userServices';
 
@@ -11,35 +11,79 @@ export default function Login() {
 
     const navigate = useNavigate();
     const { setAuth } = useContext(AuthContext);
+    const [userData, setuserData] = useState({
+        email: '',
+        password: '',
+    });
 
-    // async function onSubmit(event) {
+    const [errors, setErrors] = useState({});
+    // const [hasServerError, setHasServerError] = useState(false);
+    // const [serverError, setServerError] = useState({});
+
+    function onChange(event) {
+        setuserData(state => ({ ...state, [event.target.name]: event.target.value }));
+    }
+
+    async function onSubmit(event) {
+        event.preventDefault();
+
+        try {
+            const { email, password } = userData;
+            const user = await userServices.login(email, password);
+            setuserData(user);
+            setAuth(user);
+
+            navigate('/');
+        } catch (error) {
+            console.log(error);
+            // setHasServerError(true);
+            // setServerError(error.message);
+        }
+    }
+    //================================================================= working login
+    // function onSubmit(event) {
     //     event.preventDefault();
     //     const { email, password } = Object.fromEntries(new FormData(event.target));
 
-    //     try {
-    //         const user = await userServices.login(email, password);
-    //         setAuth(user);
-    //         navigate('/');
-
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
+    //     userServices.login(email, password)
+    //         .then(auth => {
+    //             setAuth(auth);
+    //             navigate('/');
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         });
     // }
+    //================================================================
 
-    function onSubmit(event) {
-        event.preventDefault();
-        const { email, password } = Object.fromEntries(new FormData(event.target));
-    
-        userServices.login(email, password)
-            .then(auth => {
-                setAuth(auth);
-                navigate('/');
-            })
-            .catch(error => {
-                console.log(error);
-            });
+    function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
     }
-    
+
+    const emailValidator = () => {
+        if (!validateEmail(userData.email)) {
+            setErrors(state => ({
+                ...state,
+                email: 'Please enter a valid email address!'
+            }));
+        } else {
+            if (errors.email) {
+                setErrors(state => ({ ...state, email: '' }));
+            }
+        }
+    };
+
+    const passwordValidator = () => {
+        if (userData.password.length < 5) {
+            setErrors(state => ({ ...state, password: 'Password must be at least 5 characters long!' }));
+        } else {
+            if (errors.password) {
+                setErrors(state => ({ ...state, password: '' }));
+            }
+        }
+    };
+
     return (
         <div className={styles['login']}>
 
@@ -48,10 +92,12 @@ export default function Login() {
 
                 <form onSubmit={onSubmit}>
                     <label htmlFor="email"><span><i className="fa-solid fa-envelope"></i></span>Email</label>
-                    <input type="email" name="email" placeholder="Email.." />
+                    <input onChange={onChange} value={userData.email} onBlur={emailValidator} type="email" name="email" placeholder="example@example.com" />
+                    {errors.email && (<p className={styles['errorMessage']}>{errors.email}</p>)}
 
                     <label htmlFor="password"><span><i className="fa-solid fa-lock"></i></span>Password</label>
-                    <input type="password" name="password" placeholder="Password.." />
+                    <input onChange={onChange} value={userData.password} onBlur={passwordValidator} type="password" name="password" placeholder="Password.." />
+                    {errors.password && (<p className={styles['errorMessage']}>{errors.password}</p>)}
 
                     <button className={styles['button-login']}>Login</button>
                 </form>

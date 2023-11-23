@@ -107,3 +107,8 @@ form .button-login {
     transform: scale(1.2);
 }
 
+form .errorMessage{
+    text-align: center;
+    color: red;
+    width: 20em;
+}

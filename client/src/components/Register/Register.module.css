@@ -6,7 +6,7 @@
     background: linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)), url(/assets/background.jpg) no-repeat center center;
     background-size: cover;
     padding: 8em 0;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 form label {
@@ -69,7 +69,7 @@ form label {
     font-size: 15px;
 } */
 
-.register-box p {
+.register-box .last-p {
     text-align: center;
     padding: 1.5em;
     font-size: 1em;
@@ -131,3 +131,8 @@ form .button-register {
     transform: scale(1.2);
 }
 
+form .errorMessage{
+    text-align: center;
+    color: red;
+    width: 20em;
+}

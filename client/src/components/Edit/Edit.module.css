@@ -5,7 +5,7 @@
 }
 
 
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+/* @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'); */
 
 body {
     position: relative;
@@ -185,10 +185,12 @@ textarea:disabled {
 }
 
 .form-group p {
-    color: #f8f9fa;
-    text-shadow: 1px 1px #007bff;
-    font-size: 20px;
-    font-style: italic;
+    color: red;
+    font-size: 1em;
+    background-color: white;
+    border-radius: 0.25em;
+    padding: 0;
+    margin: 0 0.2em;
 }
 
 .login,

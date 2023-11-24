@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import styles from './Details.module.css';
 import * as dataService from '../../services/dataService';
+// import * as bookServices from '../../services/bookService';
 
 import { AuthContext } from '../../context/authContext';
 import { useState, useEffect, useContext } from 'react'; //useContext
@@ -13,9 +14,15 @@ export default function Details() {
     const [details, setDetails] = useState({});
     const [isOwner, setIsOwner] = useState(false);
     const { auth } = useContext(AuthContext);
-    const [likes, setLikes] = useState([]);
-    const [isLiked, setIsLiked] = useState(false);
 
+    const [isLiked, setIsLiked] = useState(false);
+    // const [boatLikes, setBoatLikes] = useState([]);
+
+    const [isBooked, setIsBooked] = useState(false);
+    const [bookings, setBooking] = useState({});
+    const [bookByOther, setBookByOther] = useState(true);
+
+    console.log(bookings);
 
     async function onDelete(event) {
         event.preventDefault();
@@ -30,16 +37,7 @@ export default function Details() {
             }
         }
     }
-
-    // useEffect(() => {
-    //     dataService.getAllLikesForBoatById(id)
-    //         .then(likes => {
-    //             setLikes(state=>({...state, likes}));
-    //         })
-    //         .catch((error) => console.log(error));
-    // }, []);
-
-
+    //===========================================================================
     useEffect(() => {
 
         dataService.getBoatById(id)
@@ -52,24 +50,31 @@ export default function Details() {
                 console.error('Error fetching data:', error);
 
             });
+        dataService.getAllBookings()
+            .then(res => {
+                setBooking(res);
+                const isBoatBooked = res.some(booking => booking.userId === id && booking._ownerId === auth._id);
+                setIsBooked(isBoatBooked);
+                let isAlreadyBooked = res.some(booking => booking.userId === id && booking._ownerId !== auth._id);
+                setBookByOther(isAlreadyBooked);
+            })
+            // .then(res=>res.filter(x=>x.userId === id && x._ownerId === auth._id).length > 0 ? setIsBooked(true) : setIsBooked(false))
+            .catch(error => console.log(error));
+
+       
+
+
     }, [id, auth]);
 
-    useEffect(() => {
-        const storedLikes = localStorage.getItem('likes');
-        if (storedLikes) {
-            setLikes(JSON.parse(storedLikes));
-        }
-    },[]);
 
-    const onLikeClick = () => {
-        if(likes.some(like => like._ownerId === auth._id)) {
-            window.alert('You cannot like this twice!');
-            return;
-        }
 
-        dataService.likeBoat(id, auth._id)
+    //=============================================================================
+
+    const onLikeClick = (event) => {
+        event.preventDefault();
+
+        dataService.like(id, auth._id)
             .then(() => {
-                setLikes([...likes, { id, _ownerId: auth._id }]);
                 setIsLiked(true);
             })
             .catch((error) => {
@@ -77,11 +82,32 @@ export default function Details() {
             });
     };
 
-    useEffect(() => {
-        localStorage.setItem('likes', JSON.stringify(likes));
-    });
+   
+    //====================================================================
 
+    const onBookClick = (event) => {
+        event.preventDefault();
+        // const boatId = id;
+        // const userId = auth._id;
+        dataService.book(id, auth._id)
+            .then(() => setIsBooked(true))
+            .catch(error => console.log(error));
+    };
 
+    // const isBookedForAnotherUser = () => {
+    //     if (!Array.isArray(bookings)) {
+    //         return false; // If bookings is not an array, consider it as not booked for another user
+    //     }
+    //     const results = bookings.some(booking=>booking.userId===id && booking._ownerId !==auth._id);
+    //     setIsBooked(true);
+    //     return isBooked && results;
+    // };
+
+    // const isBookedByYou=()=>{
+    //     return isBooked && bookings.some(booking=>booking.userId===id && booking._ownerId ===auth._id);
+    // };
+
+    //====================================================================
     const ownerButtons = (
         <>
             <button className={styles['delete']} onClick={onDelete}><i className="fa-solid fa-trash" ></i> Delete</button>
@@ -91,9 +117,21 @@ export default function Details() {
 
     const userButtons = (
         <>
-            <button className={styles['book']}><i className="fa-solid fa-shoe-prints"></i> Book</button>
-            <button className={styles['like']} onClick={onLikeClick} disabled={isLiked} ><i className="fa-solid fa-heart"></i> Like</button>
+            {/* {isBooked ? <span>Already booked. Don't be late!</span> : <button className={styles['book']} onClick={onBookClick} disabled={isBooked}><i className="fa-solid fa-shoe-prints"></i> Book</button>} */}
 
+
+            {bookByOther ?
+                (<span>Already booked by another user!</span>) :
+                isBooked ? (<span>Already booked. Don't be late!</span>) :
+                    (<button className={styles['book']} onClick={onBookClick} disabled={isBooked}><i className="fa-solid fa-shoe-prints"></i> Book</button>)
+            }
+
+
+
+            {/* {!isBooked && (<button className={styles['book']} onClick={onBookClick} disabled={isBooked}><i className="fa-solid fa-shoe-prints"></i> Book</button>)} */}
+            {/* <button className={styles['book']} onClick={onBookClick} disabled={isBooked}><i className="fa-solid fa-shoe-prints"></i> Book</button> */}
+
+            <button className={styles['like']} onClick={onLikeClick} disabled={isLiked} ><i className="fa-solid fa-heart"></i> Like</button>
             {/* <span>Already booked. Don't be late!</span> */}
         </>
     );
@@ -147,41 +185,9 @@ export default function Details() {
                         <span>Already booked. Don't be late!</span> */}
                     </div>
                 </div>
-                <p className={styles['total-likes']} >User likes {likes?.length || 0} <i className="fa-solid fa-heart"></i></p>
+                <p className={styles['total-likes']} >User likes {0} <i className="fa-solid fa-heart"></i></p>
             </div>
         </div>
     );
 }
 
-
-
-
-// useEffect(()=>{
-//     const storedLikes = localStorage.getItem('likes');
-//     if(storedLikes){
-//         setLikes(JSON.parse(storedLikes));
-//     }
-// },[]);
-
-
-// const onLikeClick = () => {
-
-//     if (likes.some(like => like._ownerId === auth._id)) {
-//         window.alert('You cannot like this twice!');
-//         return;
-//     }
-
-//     dataService.likeBoat(id, auth._id)
-//         .then(() => {
-//             setLikes([...likes, { id, _ownerId: auth._id }]);
-//             setIsLiked(true);
-//         })
-//         .catch((error) => {
-//             console.log(error);
-//         });
-// };
-
-
-// useEffect(()=>{
-//     localStorage.setItem('likes',JSON.stringify(likes));
-// });

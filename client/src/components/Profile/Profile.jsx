@@ -8,7 +8,6 @@ import { AuthContext } from '../../context/authContext';
 
 // import { getUser } from '../../services/userServices';
 
-
 export default function Profile() {
     document.title = 'Profile';
 
@@ -44,6 +43,11 @@ export default function Profile() {
                 setLoading(true);
             })
             .finally(() => setLoading(false));
+
+            dataService.getAllBookings()
+            .then(res=>console.log((res.filter(x=>x._ownerId==auth._id))))
+            .catch(error => console.log(error));
+
     }, [auth._id]);
 
     const genderImage = `/assets/${auth.gender}.png`;

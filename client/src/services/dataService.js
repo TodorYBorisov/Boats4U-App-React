@@ -49,7 +49,7 @@ export async function canLike(boatId, userId) {
 
 
 export const like = (userId, boatId) => post('/data/likes', {userId, boatId });
-export const getAllLikes = () => get('/data/bookings');
+export const getAllLikes = () => get('/data/likes');
 
 // export const getBoatLikes = (boatId) => {
 //     // const query = encodeURIComponent(`boatId="${boatId}"`);

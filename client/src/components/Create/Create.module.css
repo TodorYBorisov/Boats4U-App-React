@@ -278,10 +278,10 @@ textarea:disabled {
     margin: 1em 0;
 }
 
-textarea,
+/* textarea,
 input {
     background: rgba(0, 0, 0, 0.5);
-}
+} */
 
 .details .icon {
     display: block;

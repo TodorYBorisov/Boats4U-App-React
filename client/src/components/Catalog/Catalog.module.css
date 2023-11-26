@@ -3,13 +3,13 @@
     background-size: cover;
 } */
 
-.catalog-page {
-    /* background: url('/assets/map1.jpg') center center no-repeat;
+/* .catalog-page {
+    background: url('/assets/map1.jpg') center center no-repeat;
     background-size: cover; */
     /* display: flex; */
     /* justify-content: space-evenly; */
-    /* height: 100vh; */
-}
+    /* height: 100vh;
+} */
 
 .title-catalog {
     font-family: 'Handlee', cursive;

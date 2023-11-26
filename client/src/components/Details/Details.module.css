@@ -10,11 +10,11 @@
     align-items: center;
 }
 
-.details-title{
+.details-title {
     font-family: 'Handlee', cursive;
-        font-size: 4em;
-        color: white;
-        padding-top: 0.5em;
+    font-size: 4em;
+    color: white;
+    padding-top: 0.5em;
 
 }
 
@@ -26,7 +26,7 @@
     width: 65%;
     height: 30%;
     color: white;
- 
+
 }
 
 .port,
@@ -36,36 +36,39 @@
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-    
-    
+
+
 }
-.boat-info h5{
-    font-size:0.5em;
+
+.boat-info h5 {
+    font-size: 0.5em;
     border-bottom: 0.2em solid lightblue;
     padding-bottom: 1em;
 }
-.boat-info .icon{
-   color: white;
-   font-size: 1em;
+
+.boat-info .icon {
+    color: white;
+    font-size: 1em;
 }
 
 .boat-info span {
-color: black;
-font-weight:700;
+    color: black;
+    font-weight: 700;
 }
 
-.picture-desc{
+.picture-desc {
     display: flex;
     gap: 1em;
-    
+
 }
 
-.picture-desc img{
+.picture-desc img {
     width: 40em;
     height: 25em;
     border-radius: 2em;
 }
-.trip-desc{
+
+.trip-desc {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -74,19 +77,19 @@ font-weight:700;
     /* gap: 1em; */
 }
 
-.trip-desc h5{
-font-size: 1.5em;
-/* margin-bottom: 1em; */
-color: black;
+.trip-desc h5 {
+    font-size: 1.5em;
+    /* margin-bottom: 1em; */
+    color: black;
 }
 
-.trip-desc h5 span{
+.trip-desc h5 span {
     color: white;
     font-weight: bold;
 }
 
 
-.trip-desc textarea{
+.trip-desc textarea {
     width: 20em;
     height: 9em;
     font-size: 1.5em;
@@ -111,12 +114,14 @@ color: black;
     width: 6em;
 }
 
-.delete{
+.delete {
     transition: transform 0.3s;
 }
-.delete:hover{
+
+.delete:hover {
     transform: scale(1.2);
 }
+
 .buttons .edit {
     padding: 0.7em 0.9em;
     color: white;
@@ -130,10 +135,11 @@ color: black;
     width: 6em;
 }
 
-.edit{
+.edit {
     transition: transform 0.3s;
 }
-.edit:hover{
+
+.edit:hover {
     transform: scale(1.2);
 }
 
@@ -151,10 +157,11 @@ color: black;
     margin-right: 1em;
 }
 
-.book{
+.book {
     transition: transform 0.3s;
 }
-.book:hover{
+
+.book:hover {
     transform: scale(1.2);
 }
 
@@ -171,12 +178,14 @@ color: black;
     width: 6em;
 }
 
-.like{
+.like {
     transition: transform 0.3s;
 }
-.like:hover{
+
+.like:hover {
     transform: scale(1.2);
 }
+
 .like i {
     color: red;
 }
@@ -191,12 +200,12 @@ color: black;
     margin-top: 1em;
     margin-right: 1em;
     cursor: pointer;
-    background-color:green;
+    background-color: green;
     width: 6em;
 
 }
 
-.total-likes{
+.total-likes {
     font-size: 1.2em;
     font-weight: 700;
     margin-top: 2.5em;
@@ -204,6 +213,11 @@ color: black;
     border-bottom: 4px solid lightblue;
     height: 2em;
 }
-.total-likes i{
+
+.total-likes i {
     color: red;
+}
+
+textarea {
+    resize: none;
 }

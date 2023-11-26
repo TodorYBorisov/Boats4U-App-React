@@ -22,7 +22,7 @@ export default function Details() {
     const [isBooked, setIsBooked] = useState(false);
     const [bookings, setBooking] = useState({});
     const [bookByOther, setBookByOther] = useState(true);
-    console.log('this is boatlikes:', boatLikes);
+    //console.log('this is boatlikes:', boatLikes);
     console.log(bookings);
 
     async function onDelete(event) {

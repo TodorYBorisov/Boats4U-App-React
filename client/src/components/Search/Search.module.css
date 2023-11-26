@@ -1,13 +1,19 @@
-.search-page{
-    background: url('/assets/map1.jpg') center center no-repeat;
-    background-size: cover;
-    height: 100vh;
+.offersList-section {
+    display: flex;
+    /* margin-top: 5em; */
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-evenly;
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 2em;
+
 }
 
 .title-search{
     font-family: 'Handlee', cursive;
     font-size: 4em;
-    padding-top: 1em;
+    padding-top: 2em;
     padding-bottom: 0.5em;
     color: white;
     text-align: center;
@@ -74,4 +80,14 @@
     /* width: 100vw;
     height: 100vh; */
     padding-top: 2em;
+}
+
+form .errorMessage{
+    position: absolute;
+    text-align: center;
+    color: red;
+    width: 20em;
+    margin-top: 3em;
+    margin-right: 5em;
+    font-size: 1em;
 }

@@ -209,10 +209,10 @@ export default function Create() {
                                 <label htmlFor="price"> <i className="fa-solid fa-euro-sign"></i> Price</label>
                             </div>
                             <div className={`${styles['form-group']} ${styles['offer-input']}`}>
-                                <input onChange={onChange} onBlur={positiveNumberValidator} type="text" className={styles['form-control-2']} id="passengerCapacity" placeholder="10" name="passengerCapacity" value={formData.passengerCapacity} />
+                                <input onChange={onChange} onBlur={positiveNumberValidator} type="number" className={styles['form-control-2']} id="passengerCapacity" placeholder="10" name="passengerCapacity" value={formData.passengerCapacity} />
                                 {errors.passengerCapacity && (<p className={styles['errorMessage']}>{errors.passengerCapacity}</p>)}
                                 {errors.price && (<p className={styles['errorMessage']}>{errors.price}</p>)}
-                                <input onChange={onChange} onBlur={priceValidator} type="text" className={styles['form-control-2']} id="price" placeholder="2000" name="price" value={formData.price} />
+                                <input onChange={onChange} onBlur={priceValidator} type="number" className={styles['form-control-2']} id="price" placeholder="2000" name="price" value={formData.price} />
                             </div>
 
                             <div className={styles['offer-label']}>
@@ -220,10 +220,10 @@ export default function Create() {
                                 <label htmlFor="year">Year</label>
                             </div>
                             <div className={`${styles['form-group']} ${styles['offer-input']}`}>
-                                <input onChange={onChange} onBlur={availabilityValidator} type="text" className={styles['form-control-2']} id="availability" placeholder="4" name="availability" value={formData.availability} />
+                                <input onChange={onChange} onBlur={availabilityValidator} type="number" className={styles['form-control-2']} id="availability" placeholder="4" name="availability" value={formData.availability} />
                                 {errors.availability && (<p className={styles['errorMessage']}>{errors.availability}</p>)}
                                 {errors.year && (<p className={styles['errorMessage']}>{errors.year}</p>)}  
-                                <input onChange={onChange} onBlur={yearValidator} type="text" className={styles['form-control-2']} id="year" placeholder="2022" name="year" value={formData.year} />
+                                <input onChange={onChange} onBlur={yearValidator} type="number" className={styles['form-control-2']} id="year" placeholder="2022" name="year" value={formData.year} />
                             </div>
                             <div className={styles['form-group']}>
                                 <label htmlFor="description">Description</label>

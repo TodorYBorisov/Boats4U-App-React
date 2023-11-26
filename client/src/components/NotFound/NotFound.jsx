@@ -1,8 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 import styles from './NotFound.module.css';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function NotFound() {
+    
+    useEffect(() => {
+		document.title = '404';
+	}, []);
+
     return (
 
         <section className={styles['not-found']}>

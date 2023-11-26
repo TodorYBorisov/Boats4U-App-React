@@ -13,7 +13,7 @@ import Catalog from './components/Catalog/Catalog';
 import Details from './components/Details/Details';
 import Profile from './components/Profile/Profile';
 import NotFound from './components/NotFound/NotFound';
-import Search1 from './components/Search1/Search1';
+import Search from './components/Search/Search';
 import Create from './components/Create/Create';
 import Edit from './components/Edit/Edit';
 import Weather from './components/Weather/Weather';
@@ -41,7 +41,7 @@ function App() {
 
             
             <Route path='/weather' element={<Weather />}></Route>
-            <Route path='/search' element={<Search1 />}></Route>
+            <Route path='/search' element={<Search />}></Route>
 
             <Route path='*' element={<NotFound />}></Route>
           </Routes>

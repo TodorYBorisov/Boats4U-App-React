@@ -6,31 +6,15 @@ import { useState, useEffect, useContext } from 'react';
 
 import { AuthContext } from '../../context/authContext';
 
-// import { getUser } from '../../services/userServices';
-
 export default function Profile() {
     document.title = 'Profile';
 
     const [boats, setBoats] = useState([]);
     const [loading, setLoading] = useState(false);
-
+    const [error, setError] = useState(null);
     const { auth } = useContext(AuthContext);
-    // const [user, setUser] = useState(null);
-    // console.log(user);
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         try {
-    //             const data = getUser();
-    //             setUser(data);
-
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     };
-    //     fetchData();
-    // }, [auth]);
-
+    const [reservedBoats, setReservedBoats] = useState([]);
+    console.log(error);
 
     useEffect(() => {
         setLoading(true);
@@ -44,10 +28,27 @@ export default function Profile() {
             })
             .finally(() => setLoading(false));
 
-            dataService.getAllBookings()
-            .then(res=>console.log((res.filter(x=>x._ownerId==auth._id))))
-            .catch(error => console.log(error));
+    }, [auth._id]);
 
+    useEffect(() => {
+        async function fetchFilteredBoats() {
+            try {
+                const boats = await dataService.getAllData();
+                const bookings = await dataService.getAllBookings();
+               
+                const userBookings = bookings.filter(booking => booking.boatId === auth._id);
+                
+                const boatIds = userBookings.map(booking => booking.userId);
+
+                const filtered = boats.filter(boat =>boatIds.includes(boat._id));
+
+                setReservedBoats(filtered);
+            } catch (error) {
+                setError(error);
+            }
+        }
+
+        fetchFilteredBoats();
     }, [auth._id]);
 
     const genderImage = `/assets/${auth.gender}.png`;
@@ -92,13 +93,36 @@ export default function Profile() {
                                 ))}
                             </ul>
                             : <div className={styles['no-boats']}>
-                                <h2>No boats!</h2>
-                                {/* <h2>Please visit us again later!</h2> */}
+                                <h4>No boats!</h4>
                             </div>
                         }
                     </div>}
-                    <h2 className={styles['title-catalog']}>My Bookings</h2>
-                    {}
+                <h2 className={styles['title-catalog']}>My Bookings</h2>
+
+                {loading ?
+                    <Loader />
+                    : <div className={styles['offersList-main-section']}>
+                        {reservedBoats.length > 0
+                            ? <ul className={styles['offersList-section']}>
+                                {reservedBoats.map(boat => (
+                                    <li key={boat._id}>
+                                        <OfferItem
+                                            id={boat._id}
+                                            imageUrl={boat.imageUrl}
+                                            startPoint={boat.startPoint}
+                                            date={boat.date}
+                                            time={boat.time}
+                                            price={boat.price}
+                                            model={boat.model}
+                                        />
+                                    </li>
+                                ))}
+                            </ul>
+                            : <div className={styles['no-boats']}>
+                                <h4>No bookings yet!</h4>
+                            </div>
+                        }
+                    </div>}
             </section>
 
         </div>

@@ -20,10 +20,10 @@ export default function Details() {
     const [likedBoats, setLikedBoats] = useState([]);
 
     const [isBooked, setIsBooked] = useState(false);
-    const [bookings, setBooking] = useState({});
+    //const [bookings, setBooking] = useState({});
     const [bookByOther, setBookByOther] = useState(true);
     //console.log('this is boatlikes:', boatLikes);
-    console.log(bookings);
+   // console.log(bookings);
 
     async function onDelete(event) {
         event.preventDefault();
@@ -53,7 +53,7 @@ export default function Details() {
             });
         dataService.getAllBookings()
             .then(res => {
-                setBooking(res);
+                //setBooking(res);
                 const isBoatBooked = res.some(booking => booking.userId === id && booking._ownerId === auth._id);
                 setIsBooked(isBoatBooked);
                 const isAlreadyBooked = res.some(booking => booking.userId === id && booking._ownerId !== auth._id);
@@ -151,7 +151,7 @@ export default function Details() {
 
 
             {bookByOther ?
-                (<span>Already booked by another user!</span>) :
+                (<span>Sorry, booked by another user!</span>) :
                 isBooked ? (<span>Already booked. Don't be late!</span>) :
                     (<button className={styles['book']} onClick={onBookClick} disabled={isBooked}><i className="fa-solid fa-shoe-prints"></i> Book</button>)
             }

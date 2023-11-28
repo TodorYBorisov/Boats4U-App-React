@@ -11,10 +11,8 @@ export default function Profile() {
 
     const [boats, setBoats] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
     const { auth } = useContext(AuthContext);
     const [reservedBoats, setReservedBoats] = useState([]);
-    console.log(error);
 
     useEffect(() => {
         setLoading(true);
@@ -31,7 +29,7 @@ export default function Profile() {
     }, [auth._id]);
 
     useEffect(() => {
-        async function fetchFilteredBoats() {
+        async function filteredBoats() {
             try {
                 const boats = await dataService.getAllData();
                 const bookings = await dataService.getAllBookings();
@@ -44,11 +42,11 @@ export default function Profile() {
 
                 setReservedBoats(filtered);
             } catch (error) {
-                setError(error);
+                console.log(error);
             }
         }
 
-        fetchFilteredBoats();
+        filteredBoats();
     }, [auth._id]);
 
     const genderImage = `/assets/${auth.gender}.png`;

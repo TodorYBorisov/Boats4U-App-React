@@ -190,6 +190,14 @@
     color: red;
 }
 
+.like:disabled {
+   background-color: grey;
+}
+
+.like:disabled:hover {
+    transform: scale(1);
+}
+
 .buttons span {
     padding: 0.7em 0.9em;
     color: white;

@@ -20,7 +20,6 @@ import Weather from './components/Weather/Weather';
 import PrivateGuard from './components/Guards/PrivateGuard';
 import PublicGuard from './components/Guards/PublicGuard';
 
-
 function App() {
   const [auth, setAuth] = useLocalStorage('user');
 
@@ -52,8 +51,8 @@ function App() {
             <Route path='*' element={<NotFound />}></Route>
           </Routes>
         </main>
+        <Footer />
       </AuthContext.Provider>
-      <Footer />
     </>
   );
 }

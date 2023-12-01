@@ -1,0 +1,182 @@
+body {
+    background: linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)),
+        url(/assets/background.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.weather {
+    display: flex;
+    height: 38em;
+    width: 24em;
+    background-color: rgba(16, 45, 204, 0.303);
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 1.5em;
+    /* margin-top: 9em; */
+}
+
+.upper-data {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.5em;
+}
+
+.location,
+.temperature {
+    font-size: 2em;
+    color: black;
+    font-weight: bold;
+}
+
+.lower-data {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 1.5em;
+    border-bottom-right-radius: 1.5em;
+    padding: 0 1em 1em 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-data img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+}
+
+.weather-data {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.more-info-container {
+    flex: 1;
+    background-color: darkslateblue;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.info-block {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.info-block-lable {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-block-lable img {
+    width: 3em;
+}
+
+.info-block-lable span {
+    color: white;
+    font-size: 1em;
+}
+
+.info-block-value {
+    font-size: 1.3em;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+}
+
+/* .wrapper{
+    padding-top: 8em;
+} */
+/* ==================== */
+.search-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2em;
+    /* height: 4vh; */
+    padding-top: 9em;
+}
+
+.search-form {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.search-form input {
+    outline: none;
+    border: none;
+    width: 20em;
+    height: 4vh;
+    padding: 0.5em;
+    font-weight: normal;
+    /* letter-spacing: 3px; */
+    font-size: 1em;
+    border-radius: 0.5em;
+    /* margin-right: 20px; */
+}
+
+.search-button {
+    font-size: 1.5em;
+    border-radius: 0.5em;
+    width: 20%;
+    outline: none;
+    border: none;
+    /* padding: 0.5em; */
+    cursor: pointer;
+    background-color: rgb(32, 129, 178);
+}
+
+.search-button i {
+    font-size: 1em;
+    color: white;
+}
+
+.search-button {
+    transition: transform 0.3s;
+}
+
+.search-button:hover {
+    transform: scale(1.2);
+}
+
+.errorMessage {
+    display: inline;
+    text-align: center;
+    color: red;
+    width: 20em;
+    font-size: 1em;
+    
+}

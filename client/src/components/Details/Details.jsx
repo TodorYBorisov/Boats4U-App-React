@@ -66,17 +66,33 @@ export default function Details() {
             });
     };
 
+    // useEffect(() => {
+    //     dataService.canLike(id, auth._id)
+    //         .then(countLikes => {
+    //             setIsLiked(countLikes !== 0);
+    //         })
+    //         .catch(error => console.log(error));
+
+    //     dataService.likesForBoat(id)
+    //         .then((totalBoatLikes) => setBoatLikes(totalBoatLikes))
+    //         .catch(error => console.log(error));
+
+    // }, []);
+
     useEffect(() => {
-        dataService.canLike(id, auth._id)
-            .then(countLikes => {
-                setIsLiked(countLikes !== 0);
-            })
-            .catch(error => console.log(error));
+        if (auth && auth._id) {
+            dataService.canLike(id, auth._id)
+                .then(countLikes => {
+                    setIsLiked(countLikes !== 0);
+                })
+                .catch(error => console.log(error));
+        } else {
+            setIsLiked(false);
+        }
 
         dataService.likesForBoat(id)
             .then((totalBoatLikes) => setBoatLikes(totalBoatLikes))
             .catch(error => console.log(error));
-
     }, []);
 
     const onBookClick = (event) => {
@@ -106,7 +122,7 @@ export default function Details() {
             <button className={styles['like']} onClick={onLikeClick} disabled={isLiked} ><i className="fa-solid fa-heart"></i> Like</button>
         </>
     );
-
+//if(Math.random() < 0.5){throw new Error('This is an error initiated to check for a white screen of death');}
     return (
         <div className={styles['boat-details']}  >
 

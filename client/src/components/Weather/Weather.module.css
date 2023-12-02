@@ -104,7 +104,8 @@ body {
 
 .info-block-lable span {
     color: white;
-    font-size: 1em;
+    font-size: 0.8em;
+    margin-top: 0.5em;
 }
 
 .info-block-value {
@@ -178,5 +179,21 @@ body {
     color: red;
     width: 20em;
     font-size: 1em;
+
+}
+
+/* .weather-image {
+    display: flex;
+    background-color: red;
+    height: 1em;
+    width: 1em;
     
+} */
+
+.weather-image img {
+    height: 35%;
+    width: 35%;
+    margin-top: 11em;
+    margin-left: 8em;
+
 }

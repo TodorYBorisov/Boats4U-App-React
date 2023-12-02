@@ -38,7 +38,7 @@ export default function Weather() {
         fetch(`https://weatherapi-com.p.rapidapi.com/forecast.json?q=${searchValue.search}&days=3`, options)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+
                 const updatedWeatherData = {
                     location: data.location.name,
                     temp_c: Math.round(Number(data.current.temp_c)),

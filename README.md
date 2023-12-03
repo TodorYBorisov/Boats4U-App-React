@@ -1,17 +1,19 @@
 # Project Overview Boats4U 
 
-Welcome to the Boats4U rental application, where users can embark on unforgettable boating experiences. 
+- Welcome to the Boats4U rental application, where users can embark on unforgettable boating experiences. 
 This platform simplifies the process of renting boats and yachts for specific durations at particular prices, facilitating seamless interactions between boat owners and enthusiasts seeking memorable water adventures.
 
-Logged-in users have the ability to effortlessly create unique offers for their boats or yachts. This empowers boat owners to showcase their vessels' amenities, schedules, and pricing details for potential renters.
+- Logged-in users have the ability to effortlessly create unique offers for their boats or yachts. This empowers boat owners to showcase their vessels' amenities, schedules, and pricing details for potential renters.
 
-Users navigate an intuitive interface to discover an array of boat trip options suited for their summer vacation desires. They can explore various offers, filtering by preferences such as location, duration, boat type, and price.
+- Users navigate an intuitive interface to discover an array of boat trip options suited for their summer vacation desires. They can explore various offers, filtering by preferences such as location, duration, boat type, and price.
 
-The platform serves as a bridge between boat owners and vacation seekers, allowing users to easily book available offers. It streamlines the booking process, fostering a smooth communication channel between renters and boat owners.
+- The platform serves as a bridge between boat owners and vacation seekers, allowing users to easily book available offers. It streamlines the booking process, fostering a smooth communication channel between renters and boat owners.
 
-With a user-friendly interface, this application prioritizes a hassle-free browsing experience. Users can effortlessly browse, select, and book boat trips, making their holiday planning convenient and enjoyable.
+- With a user-friendly interface, this application prioritizes a hassle-free browsing experience. Users can effortlessly browse, select, and book boat trips, making their holiday planning convenient and enjoyable.
 
-Our aim is to revolutionize the way individuals plan and experience boating vacations. By providing a centralized platform for boat rentals, we seek to simplify the process, making it accessible, enjoyable, and convenient for both boat owners and vacationers.
+- The main goal of this app is to revolutionize the way people plan and experience boating vacations. By providing a centralized boat rental platform, I hope this app will simplify the process, making it accessible, enjoyable and convenient for boat owners and vacationers alike.
+
+- Front end is built using React. For the back-end, i have integrated the application with the SoftUni practice server.
 
 # To install and preview locally, follow these steps:
 

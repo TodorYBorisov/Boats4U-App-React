@@ -10,3 +10,9 @@ This is my project for the React course.
     - npm install - command for install all packages and dependencies
     - npm run dev - to start the development server and run the app
     - open your browser and go to http://localhost:5173 to access the application
+
+
+
+## Application Pages
+Home page 
+![Alt text](client/public/assets/screenshots/home-page.PNG)

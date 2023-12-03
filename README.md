@@ -98,7 +98,32 @@ Sign Up
 ![Register](client/public/assets/screenshots/register-form.PNG)
 Login 
 ![Login](client/public/assets/screenshots/login-form.PNG)
-Catalog public page for all user 
+Catalog page for all user 
 ![Catalog-public](client/public/assets/screenshots/catalog-public.PNG)
-Catalog public page details
+Catalog page details for all user 
 ![Catalog-public-details](client/public/assets/screenshots/catalog-public-details.PNG)
+Profile page
+![Profile page](client/public/assets/screenshots/profile-top.PNG)
+Profile page user bookings
+![Profile page](client/public/assets/screenshots/profile-bottom.PNG)
+Profile page female user
+![Profile page](client/public/assets/screenshots/profile-top-female.PNG)
+Details page for a logged in user who is a creator
+![Details page](client/public/assets/screenshots/catalog-private-details-owner.PNG)
+Details page for a logged in user who is NOT a creator
+![Details page](client/public/assets/screenshots/catalog-private-details-not-owner.PNG)
+Details page showcases activated buttons based on user interaction
+![Details page](client/public/assets/screenshots/catalog-private-details-not-owner-functionalities.PNG)
+![Details page](client/public/assets/screenshots/catalog-private-details-not-owner-functionalities-reserved.PNG)
+Search page for logged-in user
+![Search page](client/public/assets/screenshots/search-results.PNG)
+Search page no results
+![Search page](client/public/assets/screenshots/search-no-results.PNG)
+Create page for logged-in user
+![Search page](client/public/assets/screenshots/create-private-owner.PNG)
+Edit page for logged-in user
+![Create page](client/public/assets/screenshots/edit-private-owner.PNG)
+Weather page for logged-in user
+![Create page](client/public/assets/screenshots/weather.PNG)
+404 page not found
+![Create page](client/public/assets/screenshots/page-not-found.PNG)

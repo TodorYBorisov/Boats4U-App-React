@@ -15,4 +15,8 @@ This is my project for the React course.
 
 ## Application Pages
 Home page 
-![Alt text](client/public/assets/screenshots/home-page.PNG)
+![Home page](client/public/assets/screenshots/home-page.PNG)
+Navigation guests
+![Navigation guests](client/public/assets/screenshots/navigation-public.PNG)
+Navigation private
+![Navigation private](client/public/assets/screenshots/navigation-private.PNG)

@@ -45,10 +45,15 @@ Deployment Platforms Used:
 - **Login page** expect as input valid email and password
 
 <ins>Private part visible after successful authentication and authorization:</ins>
+- **Boats page** give access to all boat trip details information
+    - if the user <ins>isn't the creator</ins> of the boat trip, two interaction options are available: <ins>book the specific boat</ins> if it's available for reservation or give it a <ins>like</ins> to express interest
+        - when a boat is booked, it dynamically appears in the "My Bookings" list on the user's profile page, providing a real-time visualization of the user's booked trips 
+        - each user has the ability to <ins>book and like a specific boat trip only once</ins>, ensuring a singular reservation and expression of interest for each boat
+    - if the user is the creator of the boat trip:
+        - **Edit button** is displayed and the trip can be edited
+        - **Delete button** is displayed and the trip can be deleted
 
-
-
-- **Create page**, each user can create their own trips:
+- **Create page**, each user can create their own boat trips:
     - all fields in the form are required with different validations, if the form does not meet all the validations, the submit button is disabled
  
 -  **Weather page** grants logged-in users the ability to search for weather conditions based on city names, facilitating information retrieval for their travel destinations

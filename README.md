@@ -40,6 +40,17 @@ Deployment Platforms Used:
 - Backend Deployment [Render](https://render.com/): For the backend deployment, I used leveraged Render, a robust platform capable of hosting and managing server-side components. Render ensures the smooth functioning and accessibility of my backend infrastructure.
   
 ## Features
+<ins>Public part visible without authentication:</ins>
+- **Home page** is accessible by all users, and features two buttons, one directs users to the catalog displaying all available boats, while the other leads to the about page
+- **About Us** page includes incorporates an embedded Google Maps location, a carousel, and fundamental details about the application
+- **Boats page** presents essential information about a specific boat trip, offering detailed trip information without interactive functionalities
+- **Sign Up** page (register) expect as input username, email, phone number, gender, password and repeat password, <ins>all fields are required to create a new user</ins>
+    - Username should be at least 3 characters long
+    - Password should be at least 5 characters long
+    - The password and the repeated password should match
+- **Login page** expect as input valid email and password
+
+<ins>Private part visible after successful authentication and authorization:</ins>
 
 ## Project Structure and Architecture
 <!-- ![Architecture](client/public/assets/screenshots/architecture.png) -->

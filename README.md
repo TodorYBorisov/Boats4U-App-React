@@ -1,4 +1,4 @@
-# Project Overview Boats4U 
+## Project Overview Boats4U 
 
 - Welcome to the Boats4U rental application, where users can embark on unforgettable boating experiences. 
 This platform simplifies the process of renting boats and yachts for specific durations at particular prices, facilitating seamless interactions between boat owners and enthusiasts seeking memorable water adventures.
@@ -10,7 +10,7 @@ This platform simplifies the process of renting boats and yachts for specific du
 - The main goal of this app is to revolutionize the way people plan and experience boating vacations. By providing a centralized boat rental platform, I hope this app will simplify the process, making it accessible, enjoyable and convenient for boat owners and vacationers alike.
 - Front end is built using React. For the back-end, i have integrated the application with the SoftUni practice server.
 
-# To install and preview locally, follow these steps:
+## To install and preview locally, follow these steps:
 
 1. Clone the repository to your local machine
 2. Navigate to the server folder to start the server (cd .\server\)
@@ -47,9 +47,11 @@ Deployment Platforms Used:
 <ins>Private part visible after successful authentication and authorization:</ins>
 - **Boats page** give access to all boat trip details information
     - if the user <ins>isn't the creator</ins> of the boat trip, two interaction options are available: <ins>book the specific boat</ins> if it's available for reservation or give it a <ins>like</ins> to express interest
+        - **Book button** is displayed and the trip can be booked
+        - **Like button** is displayed and the trip can be liked. Likes are individual to each boat and are cumulative
         - when a boat is booked, it dynamically appears in the "My Bookings" list on the user's profile page, providing a real-time visualization of the user's booked trips 
         - each user has the ability to <ins>book and like a specific boat trip only once</ins>, ensuring a singular reservation and expression of interest for each boat
-    - if the user is the creator of the boat trip:
+    - if the user is the <ins>creator</ins> of the boat trip:
         - **Edit button** is displayed and the trip can be edited
         - **Delete button** is displayed and the trip can be deleted
 

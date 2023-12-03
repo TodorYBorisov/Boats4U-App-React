@@ -26,3 +26,11 @@ About us public part
 ![About us top](client/public/assets/screenshots/about-us-top.PNG)
 ![About us middle](client/public/assets/screenshots/about-us-middle.PNG)
 ![About us bottom](client/public/assets/screenshots/about-us-bottom.PNG)
+Sign Up 
+![Register](client/public/assets/screenshots/register-form.PNG)
+Login 
+![Login](client/public/assets/screenshots/login-form.PNG)
+Catalog public part 
+![Catalog-public](client/public/assets/screenshots/catalog-public.PNG)
+Catalog public part details
+![Catalog-public-details](client/public/assets/screenshots/catalog-public-details.PNG)

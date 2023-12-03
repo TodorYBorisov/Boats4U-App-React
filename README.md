@@ -125,5 +125,7 @@ Edit page for logged-in user
 ![Create page](client/public/assets/screenshots/edit-private-owner.PNG)
 Weather page for logged-in user
 ![Create page](client/public/assets/screenshots/weather.PNG)
-404 page not found
+Page not found
+![Create page](client/public/assets/screenshots/page-not-found.PNG)
+White screen of death
 ![Create page](client/public/assets/screenshots/page-not-found.PNG)

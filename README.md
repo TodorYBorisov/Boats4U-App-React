@@ -128,4 +128,4 @@ Weather page for logged-in user
 Page not found
 ![Create page](client/public/assets/screenshots/page-not-found.PNG)
 White screen of death
-![Create page](client/public/assets/screenshots/page-not-found.PNG)
+![Create page](client/public/assets/screenshots/white-screen.PNG)

@@ -28,6 +28,9 @@ This platform simplifies the process of renting boats and yachts for specific du
 
 ## Project Depoyed
 
+## Project Structure and Architecture
+![Architecture](client/public/assets/screenshots/architecture.png)
+
 ## Application Pages
 Home page 
 ![Home page](client/public/assets/screenshots/home-page.PNG)

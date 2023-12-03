@@ -67,7 +67,7 @@ Deployment Platforms Used:
     - additionally, it displays all boats booked by the user
 
 - Implemented **error handling** and **data validation** for all forms to prevent crashes caused by entering invalid data
-- 
+
 ## Security
 The project incorporates several security enhancements:
 - The application requires the user to be authenticated to take advantage of the full functionalities
@@ -77,7 +77,7 @@ The project incorporates several security enhancements:
 
 ## Additional libraries
 - [Font Awesome](https://fontawesome.com/)
-- 
+
 ## Project Structure and Architecture
 <!-- ![Architecture](client/public/assets/screenshots/architecture.png) -->
 

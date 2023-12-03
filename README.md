@@ -4,7 +4,7 @@
 - Logged-in users have the ability to effortlessly create unique offers for their boats or yachts. This empowers boat owners to showcase their vessels' amenities, schedules, and pricing details for potential renters
 - Users navigate an intuitive interface to discover an array of boat trip options suited for their summer vacation desires. They can explore various offers, filtering by preferences such as location, duration, boat type, and price
 - The platform serves as a bridge between boat owners and vacation seekers, allowing users to easily book available offers. It streamlines the booking process, fostering a smooth communication channel between renters and boat owners
-- The main goal of this app is to revolutionize the way people plan and experience boating vacations. By providing a centralized boat rental platform, I hope this app will simplify the process, making it accessible, enjoyable and convenient for boat owners and vacationers alike.
+- The main goal of this app is to revolutionize the way people plan and experience boating vacations. By providing a centralized boat rental platform, I hope this app will simplify the process, making it accessible, enjoyable and convenient for boat owners and vacationers alike
 - Front end is built using React. For the back-end, i have integrated the application with the SoftUni practice server
 
 ## To install and preview locally, follow these steps:
@@ -21,14 +21,15 @@
 The application is successfully deployed, allowing users to experience its features and functionalities in action.
 
 Deployment Details:
-- Project Demo: Explore the live demonstration of my application [Boats4U](https://boats4u.vercel.app/).
-  This interactive demo showcases the seamless user experience, enabling users to navigate, explore boat options, and engage with the platform's features.
-- Repository Link: Access the deployed version's code repository on [GitHub](https://github.com/TodorYBorisov/Boats4U-Deployed).
-  This repository holds the deployed codebase, providing transparency and accessibility for developers and contributors.
+- Project Demo: Explore the live demonstration of my application at [Boats4U](https://boats4u.vercel.app/)
+  This interactive demo showcases the seamless user experience, enabling users to navigate, explore boat options, and engage with the platform's features
+- Demo user, e-mail:peter@abv.bg password:123456
+- Repository Link: Access the deployed version's code repository on [GitHub](https://github.com/TodorYBorisov/Boats4U-Deployed)
+  This repository holds the deployed codebase, providing transparency and accessibility for developers and contributors
 
 Deployment Platforms Used:
-- Front-End Deployment [Vercel](https://vercel.com/): The front-end of my application is deployed using Vercel, a powerful platform for effortlessly deploying React applications. This ensures a reliable and performant hosting environment for our user-facing interface.
-- Backend Deployment [Render](https://render.com/): For the backend deployment, I used leveraged Render, a robust platform capable of hosting and managing server-side components. Render ensures the smooth functioning and accessibility of my backend infrastructure.
+- Front-End Deployment [Vercel](https://vercel.com/): The front-end of my application is deployed using Vercel, a powerful platform for effortlessly deploying React applications. This ensures a reliable and performant hosting environment for our user-facing interface
+- Backend Deployment [Render](https://render.com/): For the backend deployment, I used leveraged Render, a robust platform capable of hosting and managing server-side components. Render ensures the smooth functioning and accessibility of my backend infrastructure
   
 ## Features
 <ins>Public part visible without authentication:</ins>

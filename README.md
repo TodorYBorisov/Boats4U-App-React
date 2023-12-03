@@ -30,18 +30,29 @@ This platform simplifies the process of renting boats and yachts for specific du
 The application is successfully deployed, allowing users to experience its features and functionalities in action.
 
 Deployment Details:
-- Project Demo: Explore the live demonstration of my application [Boats4U](https://boats4u.vercel.app/) This interactive demo showcases the seamless user experience, enabling users to navigate, explore boat options, and engage with the platform's features.
-
-- Repository Link: Access the deployed version's code repository on [GitHub](https://github.com/TodorYBorisov/Boats4U-Deployed) This repository holds the deployed codebase, providing transparency and accessibility for developers and contributors.
+- Project Demo: Explore the live demonstration of my application [Boats4U](https://boats4u.vercel.app/).
+  This interactive demo showcases the seamless user experience, enabling users to navigate, explore boat options, and engage with the platform's features.
+- Repository Link: Access the deployed version's code repository on [GitHub](https://github.com/TodorYBorisov/Boats4U-Deployed).
+  This repository holds the deployed codebase, providing transparency and accessibility for developers and contributors.
 
 Deployment Platforms Used:
 - Front-End Deployment [Vercel](https://vercel.com/): The front-end of my application is deployed using Vercel, a powerful platform for effortlessly deploying React applications. This ensures a reliable and performant hosting environment for our user-facing interface.
-
 - Backend Deployment [Render](https://render.com/): For the backend deployment, I used leveraged Render, a robust platform capable of hosting and managing server-side components. Render ensures the smooth functioning and accessibility of my backend infrastructure.
-
+  
+## Features
 
 ## Project Structure and Architecture
 <!-- ![Architecture](client/public/assets/screenshots/architecture.png) -->
+
+## Security
+The project incorporates several security enhancements:
+- The application requires the user to be authenticated to take advantage of the full functionalities
+- **Guards**: By utilizing public and private guards effectively, an application can ensure a balance between providing necessary information publicly while safeguarding sensitive functionalities and data
+- **404 Page**: An exclusive 404 page is implemented to handle undefined routes gracefully
+- **Error boundary**: catch JavaScript errors anywhere in the child component tree, log those errors, and display a fallback UI instead of crashing the whole app
+
+## Additional libraries
+- [Font Awesome](https://fontawesome.com/)
 
 ## Application Pages
 Home page 

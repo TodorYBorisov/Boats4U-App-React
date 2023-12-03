@@ -83,7 +83,7 @@ The project incorporates several security enhancements:
 The project employs a well-organized structure to improve maintainability and simplify navigation. Here's a concise summary outlining the primary directories and their intended functions:
 
     - /client: houses the frontend application developed using React
-        - /src: directory encompasses React components, styles, and the application's logic
+        - /src: directory encompasses React components, hooks, services, context and application's logic
     - /server: directory contains the backend components of the application
 
 ![Architecture](client/public/assets/screenshots/architecture.png)

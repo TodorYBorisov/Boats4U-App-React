@@ -34,6 +34,12 @@ Deployment Details:
 
 - Repository Link: Access the deployed version's code repository on [GitHub](https://github.com/TodorYBorisov/Boats4U-Deployed) This repository holds the deployed codebase, providing transparency and accessibility for developers and contributors.
 
+Deployment Platforms Used:
+- Front-End Deployment [Vercel](https://vercel.com/): The front-end of my application is deployed using Vercel, a powerful platform for effortlessly deploying React applications. This ensures a reliable and performant hosting environment for our user-facing interface.
+
+- Backend Deployment [Render](https://render.com/): For the backend deployment, I used leveraged Render, a robust platform capable of hosting and managing server-side components. Render ensures the smooth functioning and accessibility of my backend infrastructure.
+
+
 ## Project Structure and Architecture
 ![Architecture](client/public/assets/screenshots/architecture.png)
 

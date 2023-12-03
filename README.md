@@ -27,6 +27,12 @@ This platform simplifies the process of renting boats and yachts for specific du
 
 
 ## Project Depoyed
+The application is successfully deployed, allowing users to experience its features and functionalities in action.
+
+Deployment Details:
+- Project Demo: Explore the live demonstration of my application [Boats4U](https://boats4u.vercel.app/) This interactive demo showcases the seamless user experience, enabling users to navigate, explore boat options, and engage with the platform's features.
+
+- Repository Link: Access the deployed version's code repository on [GitHub](https://github.com/TodorYBorisov/Boats4U-Deployed) This repository holds the deployed codebase, providing transparency and accessibility for developers and contributors.
 
 ## Project Structure and Architecture
 ![Architecture](client/public/assets/screenshots/architecture.png)

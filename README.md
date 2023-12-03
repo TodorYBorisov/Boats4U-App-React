@@ -4,15 +4,10 @@
 This platform simplifies the process of renting boats and yachts for specific durations at particular prices, facilitating seamless interactions between boat owners and enthusiasts seeking memorable water adventures.
 
 - Logged-in users have the ability to effortlessly create unique offers for their boats or yachts. This empowers boat owners to showcase their vessels' amenities, schedules, and pricing details for potential renters.
-
 - Users navigate an intuitive interface to discover an array of boat trip options suited for their summer vacation desires. They can explore various offers, filtering by preferences such as location, duration, boat type, and price.
-
 - The platform serves as a bridge between boat owners and vacation seekers, allowing users to easily book available offers. It streamlines the booking process, fostering a smooth communication channel between renters and boat owners.
-
 - With a user-friendly interface, this application prioritizes a hassle-free browsing experience. Users can effortlessly browse, select, and book boat trips, making their holiday planning convenient and enjoyable.
-
 - The main goal of this app is to revolutionize the way people plan and experience boating vacations. By providing a centralized boat rental platform, I hope this app will simplify the process, making it accessible, enjoyable and convenient for boat owners and vacationers alike.
-
 - Front end is built using React. For the back-end, i have integrated the application with the SoftUni practice server.
 
 # To install and preview locally, follow these steps:
@@ -24,7 +19,6 @@ This platform simplifies the process of renting boats and yachts for specific du
     - npm install - command for install all packages and dependencies
     - npm run dev - to start the development server and run the app
     - open your browser and go to http://localhost:5173 to access the application
-
 
 ## Project Depoyed
 The application is successfully deployed, allowing users to experience its features and functionalities in action.
@@ -51,6 +45,24 @@ Deployment Platforms Used:
 - **Login page** expect as input valid email and password
 
 <ins>Private part visible after successful authentication and authorization:</ins>
+
+
+
+- **Create page**, each user can create their own trips:
+    - all fields in the form are required with different validations, if the form does not meet all the validations, the submit button is disabled
+ 
+-  **Weather page** grants logged-in users the ability to search for weather conditions based on city names, facilitating information retrieval for their travel destinations
+    - The project incorporates an additional external [Weather API](https://rapidapi.com/)
+
+- **Search page**, users can search among all created boat trips for a particular trip, based on any criteria. If there is a match from the search, all results are rendered, users also access details as well
+
+- **Profile page**:
+    - it features a section displaying personal information related to the user's account
+    - **avatar picture** is dynamically adjusts based on the gender of the logged-in user
+    - contains a **dynamic list** showcasing all boats created by the user, featuring links to individual trip details
+    - additionally, it displays all boats booked by the user
+
+- Implemented **error handling** and **data validation** for all forms to prevent crashes caused by entering invalid data
 
 ## Project Structure and Architecture
 <!-- ![Architecture](client/public/assets/screenshots/architecture.png) -->

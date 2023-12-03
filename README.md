@@ -20,3 +20,7 @@ Navigation guests
 ![Navigation guests](client/public/assets/screenshots/navigation-public.PNG)
 Navigation private
 ![Navigation private](client/public/assets/screenshots/navigation-private.PNG)
+About us public part
+![About us top](client/public/assets/screenshots/about-us-top.PNG)
+![About us middle](client/public/assets/screenshots/about-us-middle.PNG)
+![About us bottom](client/public/assets/screenshots/about-us-bottom.PNG)

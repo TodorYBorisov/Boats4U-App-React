@@ -56,6 +56,11 @@ ul {
 }
 
 .main-nav ul p span {
-    color: black;
+    color: white;
+    font-weight: 700;
+}
+
+.main-nav ul p {
+    color: white;
     font-weight: 700;
 }

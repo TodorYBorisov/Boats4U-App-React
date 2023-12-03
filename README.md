@@ -79,7 +79,7 @@ The project incorporates several security enhancements:
 - [Font Awesome](https://fontawesome.com/)
 
 ## Project Structure and Architecture
-<!-- ![Architecture](client/public/assets/screenshots/architecture.png) -->
+![Architecture](client/public/assets/screenshots/architecture.png)
 
 ## Application Pages
 Home page 

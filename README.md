@@ -1,8 +1,8 @@
 ## Project Overview Boats4U 
 
-- Welcome to the Boats4U rental application, where users can embark on unforgettable boating experiences. This platform simplifies the process of renting boats and yachts for specific durations at particular prices, facilitating seamless interactions between boat owners and enthusiasts seeking memorable water adventures.
+- Welcome to the Boats4U rental application, where users can embark on unforgettable boating experiences. This platform simplifies the process of renting boats and yachts for specific durations at particular prices, facilitating seamless interactions between boat owners and enthusiasts seeking memorable water adventures
 - Logged-in users have the ability to effortlessly create unique offers for their boats or yachts. This empowers boat owners to showcase their vessels' amenities, schedules, and pricing details for potential renters
-- Users navigate an intuitive interface to discover an array of boat trip options suited for their summer vacation desires. They can explore various offers, filtering by preferences such as location, duration, boat type, and price
+- Users navigate an intuitive interface to discover an array of boat trip options suited for their summer vacation desires. They can explore various offers, filtering by preferences such as location, duration, boat type, price, year or even by a word
 - The platform serves as a bridge between boat owners and vacation seekers, allowing users to easily book available offers. It streamlines the booking process, fostering a smooth communication channel between renters and boat owners
 - The main goal of this app is to revolutionize the way people plan and experience boating vacations. By providing a centralized boat rental platform, I hope this app will simplify the process, making it accessible, enjoyable and convenient for boat owners and vacationers alike
 - Front end is built using React. For the back-end, i have integrated the application with the SoftUni practice server
@@ -21,26 +21,26 @@
 The application is successfully deployed, allowing users to experience its features and functionalities in action.
 
 Deployment Details:
-- Project Demo: Explore the live demonstration of my application at [Boats4U](https://boats4u.vercel.app/)
+- Project Demo: Explore the live demonstration of my application at [Boats4U](https://boats4u.vercel.app/).
   This interactive demo showcases the seamless user experience, enabling users to navigate, explore boat options, and engage with the platform's features
-- Demo user, e-mail:peter@abv.bg password:123456
-- Repository Link: Access the deployed version's code repository on [GitHub](https://github.com/TodorYBorisov/Boats4U-Deployed)
+- Demo users, e-mail: toshko@abv.bg password: 123456 & e-mail: peter@abv.bg password: 123456
+- Repository Link: Access the deployed version's code repository on [GitHub](https://github.com/TodorYBorisov/Boats4U-Deployed).
   This repository holds the deployed codebase, providing transparency and accessibility for developers and contributors
 
 Deployment Platforms Used:
-- Front-End Deployment [Vercel](https://vercel.com/): The front-end of my application is deployed using Vercel, a powerful platform for effortlessly deploying React applications. This ensures a reliable and performant hosting environment for our user-facing interface
-- Backend Deployment [Render](https://render.com/): For the backend deployment, I used leveraged Render, a robust platform capable of hosting and managing server-side components. Render ensures the smooth functioning and accessibility of my backend infrastructure
+- Front-End Deployment [Vercel](https://vercel.com/). The front-end of my application is deployed using Vercel, a powerful platform for effortlessly deploying React applications. This ensures a reliable and performant hosting environment for our user-facing interface
+- Backend Deployment [Render](https://render.com/). For the backend deployment, I used leveraged Render, a robust platform capable of hosting and managing server-side components. Render ensures the smooth functioning and accessibility of my backend infrastructure
   
 ## Features
 <ins>Public part visible without authentication:</ins>
 - **Home page** is accessible by all users, and features two buttons, one directs users to the catalog displaying all available boats, while the other leads to the about page
 - **About Us** page includes incorporates an embedded Google Maps location, a carousel, and fundamental details about the application
 - **Boats page** presents essential information about a specific boat trip, offering detailed trip information without interactive functionalities
-- **Sign Up** page (register) expect as input username, email, phone number, gender, password and repeat password, <ins>all fields are required to create a new user</ins>
+- **Sign Up** page expects as input username, email, phone number, gender, password and repeat password, <ins>all fields are required to create a new user</ins>
     - Username should be at least 3 characters long
     - Password should be at least 5 characters long
     - The password and the repeated password should match
-- **Login page** expect as input valid email and password
+- **Login page** expects a valid email and password as input
 
 <ins>Private part visible after successful authentication and authorization:</ins>
 - **Boats page** give access to all boat trip details information

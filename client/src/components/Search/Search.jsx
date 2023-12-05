@@ -33,10 +33,8 @@ export default function Search() {
                     boat.endPoint.toLowerCase().includes(searchValue.search.toLowerCase()) ||
                     boat.model.toLowerCase().includes(searchValue.search.toLowerCase()) ||
                     boat.description.toLowerCase().includes(searchValue.search.toLowerCase()) ||
-                    (typeof boat.price === 'number' &&
-                        boat.price.toString().includes(searchValue.search.toLowerCase())) ||
-                    (typeof boat.year === 'number' &&
-                        boat.year.toString().includes(searchValue.search.toLowerCase())) ||
+                    (boat.price.toString().includes(searchValue.search.toLowerCase())) ||
+                    (boat.year.toString().includes(searchValue.search.toLowerCase())) ||
                     (typeof boat.date === 'string' &&
                         boat.date.includes(searchValue.search.toLowerCase())
                     )

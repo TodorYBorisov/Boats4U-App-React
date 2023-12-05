@@ -3,11 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: rgb(130, 158, 179); */
-    /* position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%; */
     background: rgb(125, 154, 177);
     background: radial-gradient(circle, rgba(125, 154, 177, 1) 31%, rgba(2, 0, 36, 1) 100%, rgba(125, 154, 177, 1) 100%);
 }
@@ -28,6 +23,5 @@ p {
 }
 
 span {
-    /* color: black; */
     font-weight: 500;
 }

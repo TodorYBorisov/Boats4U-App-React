@@ -15,7 +15,6 @@
     font-size: 4em;
     color: white;
     padding-top: 0.5em;
-
 }
 
 .boat-info {
@@ -26,7 +25,6 @@
     width: 65%;
     height: 30%;
     color: white;
-
 }
 
 .port,
@@ -36,8 +34,6 @@
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-
-
 }
 
 .boat-info h5 {
@@ -59,7 +55,6 @@
 .picture-desc {
     display: flex;
     gap: 1em;
-
 }
 
 .picture-desc img {
@@ -74,12 +69,10 @@
     justify-content: flex-start;
     align-items: center;
     justify-content: center;
-    /* gap: 1em; */
 }
 
 .trip-desc h5 {
     font-size: 1.5em;
-    /* margin-bottom: 1em; */
     color: black;
 }
 
@@ -87,7 +80,6 @@
     color: white;
     font-weight: bold;
 }
-
 
 .trip-desc textarea {
     width: 20em;
@@ -191,7 +183,7 @@
 }
 
 .like:disabled {
-   background-color: grey;
+    background-color: grey;
 }
 
 .like:disabled:hover {
@@ -210,7 +202,6 @@
     cursor: pointer;
     background-color: green;
     width: 6em;
-
 }
 
 .total-likes {

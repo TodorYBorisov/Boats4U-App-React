@@ -66,19 +66,6 @@ export default function Details() {
             });
     };
 
-    // useEffect(() => {
-    //     dataService.canLike(id, auth._id)
-    //         .then(countLikes => {
-    //             setIsLiked(countLikes !== 0);
-    //         })
-    //         .catch(error => console.log(error));
-
-    //     dataService.likesForBoat(id)
-    //         .then((totalBoatLikes) => setBoatLikes(totalBoatLikes))
-    //         .catch(error => console.log(error));
-
-    // }, []);
-
     useEffect(() => {
         if (auth && auth._id) {
             dataService.canLike(id, auth._id)
@@ -97,8 +84,6 @@ export default function Details() {
 
     const onBookClick = (event) => {
         event.preventDefault();
-        // const boatId = id;
-        // const userId = auth._id;
         dataService.book(id, auth._id)
             .then(() => setIsBooked(true))
             .catch(error => console.log(error));

@@ -1,9 +1,7 @@
 import styles from './Carousel.module.css';
 
-
 export default function Carousel() {
     return (
-
         <div className={styles['container']}>
             <div className={styles['carousel']}>
                 <div className={styles['carousel__face']}><p>Alessandro Lombardi</p></div>
@@ -17,6 +15,5 @@ export default function Carousel() {
                 <div className={styles['carousel__face']}><p>Alexandros Kostas</p></div>
             </div>
         </div>
-
     );
 }

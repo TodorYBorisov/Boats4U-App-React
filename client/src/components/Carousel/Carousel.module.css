@@ -23,7 +23,6 @@ body {
     position: absolute;
     width: 19em;
     height: 14em;
-    /* top: 20px; */
     left: 10px;
     right: 10px;
     background-size: cover;
@@ -33,11 +32,9 @@ body {
   }
   
   .carousel__face p{
-    /* margin: auto; */
     font-size: 0.8em;
     padding: 0.7em;
   }
-  
   
   .carousel__face:nth-child(1) {
     background-image: url("/assets/captain1.jpg");
@@ -66,8 +63,6 @@ body {
   .carousel__face:nth-child(9) {
     background-image: url("/assets/captain9.jpg");
     transform: rotateY(320deg) translateZ(430px); }
-  
-  
   
   @keyframes rotate360 {
     from {

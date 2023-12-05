@@ -1,7 +1,5 @@
-
 import styles from './Register.module.css';
 import { Link, useNavigate } from 'react-router-dom';
-
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../context/authContext';
 import * as userServices from '../../services/userServices';
@@ -21,8 +19,8 @@ export default function Register() {
     });
 
     const [errors, setErrors] = useState({});
-    // const [hasServerError, setHasServerError] = useState(false);
-    // const [serverError, setServerError] = useState({});
+    const [hasServerError, setHasServerError] = useState(false);
+    const [serverError, setServerError] = useState({});
 
     function onChange(event) {
         setuserData(state => ({ ...state, [event.target.name]: event.target.value }));
@@ -39,8 +37,8 @@ export default function Register() {
             navigate('/');
         } catch (error) {
             console.log(error);
-            // setHasServerError(true);
-            // setServerError(error.message);
+            setHasServerError(true);
+            setServerError(error.message);
         }
     }
 
@@ -102,7 +100,6 @@ export default function Register() {
         }
     };
 
-
     return (
         <div className={styles['register']}>
             <div className={styles['register-box']}>
@@ -140,14 +137,13 @@ export default function Register() {
                     <button className={styles['button-register']} disabled={(Object.values(errors).some(x => x)
                         || (Object.values(userData).some(x => x == '')))}>Sign Up</button>
 
-                    {/* {hasServerError && (<p className={styles.serverError}>{serverError}</p>)} */}
+                    {hasServerError && (<p className={styles.serverError}>{serverError}</p>)}
 
                 </form>
 
                 <div className={styles['last-p']}>
                     <p>Already have an account? <Link to='/login'>Login here</Link></p>
                 </div>
-
             </div >
         </div>
     );

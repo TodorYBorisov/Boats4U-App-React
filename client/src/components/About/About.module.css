@@ -28,7 +28,6 @@ span {
   color: black;
 }
 
-
 .location {
   display: flex;
   flex-direction: column;
@@ -42,8 +41,6 @@ background-size: cover;
 .location h2 {
   text-align: center;
   margin: 0 auto;
-  
-
 }
 
 .map1,

@@ -1,14 +1,12 @@
-.profile-container{
+.profile-container {
     /* background: linear-gradient(rgba(165, 163, 163, 0.3), rgba(165, 163, 163, 0.3)),
     url(/assets/background.jpg) no-repeat center center;
     background-size: cover;
     padding: 4.37em 0; */
     /* height: 100vh; */
-
-  
 }
 
-.profile-data{
+.profile-data {
     margin-top: 8em;
     display: flex;
     flex-direction: column;
@@ -17,69 +15,55 @@
     margin-bottom: 1em;
 }
 
-.profile-data span{
+.profile-data span {
     color: black;
 }
 
 .profile-data img {
     font-size: 1em;
-    
 }
 
-.user-data{
+.user-data {
     display: flex;
     gap: 1em;
     font-size: 1.5em;
     border-bottom: 0.1em solid lightblue;
 }
 
-.catalog-page{
+.catalog-page {
     display: flex;
     flex-direction: column;
-
 }
 
 .title-catalog {
-    /* display: flex; */
     font-family: 'Handlee', cursive;
     font-size: 2em;
-    /* padding-top: 2em;
-    padding-bottom: 0.5em; */
     color: white;
     text-align: center;
-    /* height: 100vh; */
     flex-direction: row;
     margin-bottom: 0.5em;
-
-    
-   
 }
 
 .offersList-section {
     display: flex;
-    /* margin-top: 5em; */
     flex-wrap: wrap;
     gap: 1em;
     justify-content: space-evenly;
     width: 95%;
     margin: 0 auto;
     padding-bottom: 2em;
-
 }
 
 .card-container {
     height: 30em;
     width: 22em;
     background-color: transparent;
-    /* padding: 1em; */
     border-radius: 1em;
     box-shadow: 0 0 1em;
     float: left;
     border: none;
-
     background: rgb(125, 154, 177);
     background: radial-gradient(circle, rgba(125, 154, 177, 1) 31%, rgba(2, 0, 36, 1) 100%, rgba(125, 154, 177, 1) 100%);
-
 }
 
 .card {
@@ -87,10 +71,8 @@
     position: relative;
     flex-direction: column;
     min-width: 0;
-    /* width: 20em; */
     height: 100%;
     border-radius: 0.5em;
-    /* justify-content: space-evenly; */
     align-items: center;
     gap: 1em;
 }
@@ -113,7 +95,6 @@ img {
     gap: 1em;
     padding: 1em;
     font-size: large;
-
 }
 
 .card-footer {
@@ -128,7 +109,6 @@ img {
     color: white;
     font-weight: bold;
     cursor: pointer;
-
 }
 
 .no-boats {
@@ -136,7 +116,6 @@ img {
     font-size: 2em;
     color: white;
     text-align: center;
-    /* width: 100vw; */
     height: 50vh;
     padding-top: 5em;
 }

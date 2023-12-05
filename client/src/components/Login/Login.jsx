@@ -4,8 +4,6 @@ import { useState, useContext } from 'react';
 import { AuthContext } from '../../context/authContext';
 import * as userServices from '../../services/userServices';
 
-
-
 export default function Login() {
     document.title = 'Login';
 
@@ -40,21 +38,6 @@ export default function Login() {
             // setServerError(error.message);
         }
     }
-    //================================================================= working login
-    // function onSubmit(event) {
-    //     event.preventDefault();
-    //     const { email, password } = Object.fromEntries(new FormData(event.target));
-
-    //     userServices.login(email, password)
-    //         .then(auth => {
-    //             setAuth(auth);
-    //             navigate('/');
-    //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //         });
-    // }
-    //================================================================
 
     function validateEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

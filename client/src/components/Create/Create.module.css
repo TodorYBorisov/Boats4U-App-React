@@ -1,17 +1,8 @@
-/* body{
-    background: url('/assets/map1.jpg') center center no-repeat;
-    background-size: cover;
-} */
-
-
 #offer-trip-page {
     background: url('/assets/map1.jpg') center center no-repeat;
     background-size: cover;
     height: 100vh;
 }
-
-
-/* @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'); */
 
 body {
     position: relative;
@@ -30,11 +21,6 @@ section div.container.home {
     text-align: center;
     color: white;
 }
-
-/* .home p.lead {
-  font-size: 24px;
-  font-style: italic;
-} */
 
 .edit-label,
 .offer-label {
@@ -176,8 +162,6 @@ input.form-control-2,
 textarea.form-control,
 input.form-control,
 textarea:disabled {
-    /* box-shadow: 0px -2px 20px -1px #f4c537, inset -14px -14px 30px -13px rgb(0 0 0 / 55%); */
-    /* background: rgba(0, 0, 0, 0.5); */
     background: rgb(232, 240, 254);
     color: black;
     border: none;
@@ -277,11 +261,6 @@ textarea:disabled {
 
     margin: 1em 0;
 }
-
-/* textarea,
-input {
-    background: rgba(0, 0, 0, 0.5);
-} */
 
 .details .icon {
     display: block;
@@ -397,10 +376,6 @@ div.error p {
     font-weight: bold;
 }
 
-/* i {
-  color: #0578B9;
-} */
-
 .btn {
     margin-bottom: 10px;
 }
@@ -417,7 +392,6 @@ button.btn {
     background-color: rgb(32, 129, 178);
     cursor: pointer;
 }
-
 
 button .btn {
     transition: transform 0.3s;
@@ -448,15 +422,6 @@ button.btn:hover {
 .btn.btn-warning {
     color: #fff;
 }
-
-/* .btn.btn-primary {
-  background-color: #0578B9;
-  border: none;
-}
-
-.btn.btn-primary:hover {
-  background-color: #099cf1;
-} */
 
 li>a.nav-link {
     color: rgba(255, 255, 255, 0.8) !important;

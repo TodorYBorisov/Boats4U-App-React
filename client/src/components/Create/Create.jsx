@@ -6,9 +6,7 @@ import { useState } from 'react';
 export default function Create() {
     document.title = 'Create';
 
-
     const navigate = useNavigate();
-    // const [disableButton, setDisableButton] = useState(false);
     const [formData, setFormData] = useState({
         startPoint: '',
         endPoint: '',
@@ -25,7 +23,6 @@ export default function Create() {
 
     const [errors, setErrors] = useState({});
 
-    //тук актуализираме стария стейт на формата при промяна в input полето
     function onChange(event) {
         const { name, value } = event.target;
         setFormData((prevFormData) => ({ ...prevFormData, [name]: value, }));
@@ -43,8 +40,6 @@ export default function Create() {
                 console.log(error);
             });
     };
-
-    //===================Validations
 
     const startPointValidator = () => {
         if (formData.startPoint.length < 1) {
@@ -156,16 +151,13 @@ export default function Create() {
 
     const descriptionValidator = () => {
         if (formData.description.length < 20) {
-            setErrors(state => ({...state,description: 'Additional descriptive information must be at least 20 characters long!'}));
+            setErrors(state => ({ ...state, description: 'Additional descriptive information must be at least 20 characters long!' }));
         } else {
             if (errors.description) {
                 setErrors(state => ({ ...state, description: '' }));
             }
         }
     };
-
-
-    //===================
 
     return (
         <>
@@ -222,7 +214,7 @@ export default function Create() {
                             <div className={`${styles['form-group']} ${styles['offer-input']}`}>
                                 <input onChange={onChange} onBlur={availabilityValidator} type="number" className={styles['form-control-2']} id="availability" placeholder="4" name="availability" value={formData.availability} />
                                 {errors.availability && (<p className={styles['errorMessage']}>{errors.availability}</p>)}
-                                {errors.year && (<p className={styles['errorMessage']}>{errors.year}</p>)}  
+                                {errors.year && (<p className={styles['errorMessage']}>{errors.year}</p>)}
                                 <input onChange={onChange} onBlur={yearValidator} type="number" className={styles['form-control-2']} id="year" placeholder="2022" name="year" value={formData.year} />
                             </div>
                             <div className={styles['form-group']}>
@@ -231,12 +223,11 @@ export default function Create() {
                                 <textarea onChange={onChange} onBlur={descriptionValidator} className={styles['form-control']} id={styles['description']} placeholder="Any additional information about the trip" name="description" value={formData.description}></textarea>
                             </div>
                             <button disabled={(Object.values(errors).some(x => x)
-                                            || (Object.values(formData).some(x => x == '')))} type="submit" className={`${styles['btn']} ${styles['btn-primary']}`}>SUBMIT</button>
+                                || (Object.values(formData).some(x => x == '')))} type="submit" className={`${styles['btn']} ${styles['btn-primary']}`}>SUBMIT</button>
                         </form>
                     </div>
                 </div>
             </section>
-
         </>
     );
 }

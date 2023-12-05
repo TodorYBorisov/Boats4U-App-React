@@ -4,7 +4,6 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../context/authContext';
 import * as userServices from '../../../services/userServices';
 
-
 export default function Navigation() {
 
   const navigate = useNavigate();
@@ -29,7 +28,6 @@ export default function Navigation() {
       <Link to='/'><img src="/assets/logo.png" alt="site-logo" /></Link>
       <ul>
         <li><Link to="/"><i className="fa-solid fa-house"></i> Home</Link></li>
-        {/* <li><Link to='/about'><i className="fa-solid fa-circle-info"></i> About Us</Link></li> */}
         <li><Link to="/boats"><i className="fa-solid fa-anchor"></i> Boats</Link></li>
 
         {auth ?

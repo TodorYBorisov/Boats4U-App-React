@@ -43,8 +43,6 @@ ul {
     cursor: pointer;
     border: 1px solid white;
     border-radius: 0.7em;
-
-    /* border-bottom: 0.2em solid lightblue; */
 }
 
 .main-nav ul li a {

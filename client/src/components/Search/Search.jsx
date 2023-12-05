@@ -1,5 +1,5 @@
 import styles from './Search.module.css';
-import {useState } from 'react';//useEffect
+import { useState } from 'react';
 import * as dataService from '../../services/dataService';
 import OfferItem from '../Catalog/OfferList/OfferItem/OfferItem';
 import Loader from '../Loader/Loader';
@@ -15,49 +15,12 @@ export default function Search() {
     const [searchValue, setSearchValue] = useState(initialValue);
     const [searchPerformed, setSearchPerformed] = useState(false);
 
-    //If i want instant search i can implement this below!
-    // useEffect(() => {
-    //     if (searchValue.search.trim() === '') {
-    //         setBoats([]);
-    //         setSearchPerformed(false);
-    //         return;
-    //     }
-    //     setLoading(true);
-    //     dataService.getAllData()
-    //         .then(result => {
-    //             const filteredBoats = result.filter(boat =>
-    //                 boat.startPoint.toLowerCase().includes(searchValue.search.toLowerCase()) ||
-    //                 boat.endPoint.toLowerCase().includes(searchValue.search.toLowerCase()) ||
-    //                 boat.model.toLowerCase().includes(searchValue.search.toLowerCase()) ||
-    //                 boat.description.toLowerCase().includes(searchValue.search.toLowerCase()) ||
-    //                 (typeof boat.price === 'number' &&
-    //                     boat.price.toString().includes(searchValue.search.toLowerCase())) ||
-    //                 (typeof boat.year === 'number' &&
-    //                     boat.year.toString().includes(searchValue.search.toLowerCase())) ||
-    //                 (typeof boat.date === 'string' &&
-    //                 boat.date.includes(searchValue.search.toLowerCase()))
-    //             );
-    //             setBoats(filteredBoats);
-
-    //             if (filteredBoats.length === 0) {
-    //                 setSearchPerformed(true);
-    //             } else {
-    //                 setSearchPerformed(false);
-    //             }
-    //         })
-    //         .catch(error => console.log(error))
-    //         .finally(() => setLoading(false));
-    // }, [searchValue]);
-
     const onChange = (event) => {
         setSearchValue(state => ({
             ...state,
             [event.target.name]: event.target.value,
         }));
     };
-    //uncomment for instant search and replace onsubmit with handleSearch
-    // const handleSearch = () => {
-    // };
 
     function onSubmit(event) {
         event.preventDefault();
@@ -76,7 +39,7 @@ export default function Search() {
                         boat.year.toString().includes(searchValue.search.toLowerCase())) ||
                     (typeof boat.date === 'string' &&
                         boat.date.includes(searchValue.search.toLowerCase())
-                        )
+                    )
                 );
 
                 setBoats(filteredBoats);
@@ -116,9 +79,9 @@ export default function Search() {
                         placeholder="Search here..."
                         onChange={onChange}
                         onBlur={inputValidator}
-                        />
-                        {errors.search && (<p className={styles['errorMessage']}>{errors.search}</p>)}
-                    <button className={styles['search-button']} disabled={Object.values(errors).some(x=>x) || (Object.values(searchValue).some(x => x == ''))} type="submit" onClick={onSubmit}>
+                    />
+                    {errors.search && (<p className={styles['errorMessage']}>{errors.search}</p>)}
+                    <button className={styles['search-button']} disabled={Object.values(errors).some(x => x) || (Object.values(searchValue).some(x => x == ''))} type="submit" onClick={onSubmit}>
                         <i className="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>
@@ -151,28 +114,3 @@ export default function Search() {
         </section>
     );
 }
-
-
-    // function onChange(event) {
-    //     setSearchValue(state => ({ ...state, [event.target.name]: event.target.value }));
-    // }
-
-    // function onChange(event) {
-    //     const { name, value } = event.target;
-    //     setBoats((prevFormData) => ({ ...prevFormData, [name]: value, }));
-    // }
-
-
-
-        // const onChange = (event) => {
-    //     let value = '';
-    //     if (event.target.startPoint) {
-    //         value = event.target.value;
-    //     }
-
-    //     setSearchValue(state => ({
-    //         ...state,
-    //         [event.target.name]: value,
-    //     }));
-
-    // };

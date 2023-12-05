@@ -1,6 +1,5 @@
 .offersList-section {
     display: flex;
-    /* margin-top: 5em; */
     flex-wrap: wrap;
     gap: 1em;
     justify-content: space-evenly;
@@ -10,7 +9,7 @@
 
 }
 
-.title-search{
+.title-search {
     font-family: 'Handlee', cursive;
     font-size: 4em;
     padding-top: 2em;
@@ -19,9 +18,7 @@
     text-align: center;
 }
 
-
-/* search form */
-.search-container{
+.search-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -29,10 +26,10 @@
     height: 4vh
 }
 
-.search-form{
+.search-form {
     display: flex;
     gap: 1em;
-    justify-content: center;   
+    justify-content: center;
 }
 
 .search-form input {
@@ -42,33 +39,30 @@
     height: 4vh;
     padding: 0.5em;
     font-weight: normal;
-    /* letter-spacing: 3px; */
-    font-size: 1em;    
+    font-size: 1em;
     border-radius: 0.5em;
-    /* margin-right: 20px; */
 }
 
-.search-button{
-    font-size: 1.5em;    
+.search-button {
+    font-size: 1.5em;
     border-radius: 0.5em;
     width: 20%;
     outline: none;
     border: none;
-    /* padding: 0.5em; */
     cursor: pointer;
     background-color: rgb(32, 129, 178);
-    
-}
-.search-button i{
-    font-size: 1em;
-    color: white;
-    
 }
 
-.search-button{
+.search-button i {
+    font-size: 1em;
+    color: white;
+}
+
+.search-button {
     transition: transform 0.3s;
 }
-.search-button:hover{
+
+.search-button:hover {
     transform: scale(1.2);
 }
 
@@ -77,12 +71,10 @@
     font-size: 2em;
     color: white;
     text-align: center;
-    /* width: 100vw;
-    height: 100vh; */
     padding-top: 2em;
 }
 
-form .errorMessage{
+form .errorMessage {
     position: absolute;
     text-align: center;
     color: red;

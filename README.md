@@ -76,6 +76,15 @@ The project incorporates several security enhancements:
 - **404 Page**: An exclusive 404 page is implemented to handle undefined routes gracefully
 - **Error boundary**: catch JavaScript errors anywhere in the child component tree, log those errors, and display a fallback UI instead of crashing the whole app
 
+## Unit Tests
+The Boats4U frontend tests are crafted to guarantee the reliability and functionality of the user interface. These tests leverage Vitest, a versatile and lightweight testing library, combined with @vitest/ui to deliver a smooth and integrated testing process
+
+- @testing-library/react: Unit tests are implemented using @testing-library/react to test individual React components in isolation. This approach ensures that each component behaves as expected and remains easily maintainable.
+
+- @testing-library/jest-dom: Jest-DOM extends Jest's functionality by providing a set of custom matchers for asserting on the state of DOM elements. This integration enhances the precision of component tests.
+
+![unit tests](client/public/assets/screenshots/unitTests.PNG)
+
 ## Additional libraries
 - [Font Awesome](https://fontawesome.com/)
 

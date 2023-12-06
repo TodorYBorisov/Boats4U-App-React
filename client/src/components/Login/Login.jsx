@@ -75,18 +75,18 @@ export default function Login() {
 
                 <form onSubmit={onSubmit}>
                     <label htmlFor="email"><span><i className="fa-solid fa-envelope"></i></span>Email</label>
-                    <input onChange={onChange} value={userData.email} onBlur={emailValidator} type="email" name="email" placeholder="example@example.com" />
+                    <input data-testid='email' onChange={onChange} value={userData.email} onBlur={emailValidator} type="email" name="email" placeholder="example@example.com" />
                     {errors.email && (<p className={styles['errorMessage']}>{errors.email}</p>)}
 
                     <label htmlFor="password"><span><i className="fa-solid fa-lock"></i></span>Password</label>
-                    <input onChange={onChange} value={userData.password} onBlur={passwordValidator} type="password" name="password" placeholder="Password.." />
+                    <input data-testid='password' onChange={onChange} value={userData.password} onBlur={passwordValidator} type="password" name="password" placeholder="Password.." />
                     {errors.password && (<p className={styles['errorMessage']}>{errors.password}</p>)}
 
-                    <button className={styles['button-login']}>Login</button>
+                    <button data-testid='loginBtn' className={styles['button-login']}>Login</button>
                 </form>
 
                 <div className={styles['last-p']}>
-                    <p>Not have an account? <Link to='/register'>Sign Up here</Link></p>
+                    <p>Not have an account? <Link to='/register' data-testid='link'>Sign Up here</Link></p>
                 </div>
             </div >
 

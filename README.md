@@ -95,7 +95,7 @@ The project employs a well-organized structure to improve maintainability and si
         - /src: directory encompasses React components, hooks, services, context and application's logic
     - /server: directory contains the backend components of the application
 
-![Architecture](client/public/assets/screenshots/architecture.png)
+![Architecture](client/public/assets/screenshots/architecture1.png)
 
 ## Application Pages
 Home page 

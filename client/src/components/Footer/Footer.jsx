@@ -18,11 +18,11 @@ export default function Footer() {
 
     return (
         <footer className={styles['footer']}>
-            <p>Copyright &copy; {currentYear} Todor Borisov. All Rights Reserved. <span>Boats4U</span></p>
+            <p data-testid='footer'>Copyright &copy; {currentYear} Todor Borisov. All Rights Reserved. <span>Boats4U</span></p>
 
             <div className={styles['social-media-icons']}>
-                <a href="https://github.com/TodorYBorisov/Boats4U-App-React"><i className="fa-brands fa-square-github"></i></a>
-                <a href="#"><i className="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/TodorYBorisov/Boats4U-App-React"><i data-testid='github' className="fa-brands fa-square-github"></i></a>
+                <a href="#"><i data-testid='linkedin' className="fa-brands fa-linkedin"></i></a>
             </div>
         </footer >
     );

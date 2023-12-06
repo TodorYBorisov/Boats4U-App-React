@@ -12,9 +12,9 @@ export default function Home() {
                 <section className={styles['header-title']}>
                     <h1>It's time to start your adventures!</h1>
                     <p>We invite you to embark on your next adventure with us.</p>
-                    <p>Discover the freedom of the open sea, the beauty of the coastline, and the joy of yacht living</p>
-                    <Link to='/boats'><button className={styles['button']}>YOUR NEXT JOURNEY</button></Link>
-                    <Link to='/about'><button className={styles['button']}>ABOUT US</button></Link>
+                    <p>Discover the freedom of the open sea, the beauty of the coastline, and the joy of yacht living.</p>
+                    <Link to='/boats'><button data-testid='linkBoats' className={styles['button']}>YOUR NEXT JOURNEY</button></Link>
+                    <Link to='/about'><button data-testid='linkAbout' className={styles['button']}>ABOUT US</button></Link>
                 </section>
             </div> 
         </main>

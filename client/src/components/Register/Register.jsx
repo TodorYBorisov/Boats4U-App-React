@@ -107,42 +107,42 @@ export default function Register() {
 
                 <form onSubmit={onSubmit}>
                     <label htmlFor="username"><span><i className="fa-solid fa-user"></i></span>Username</label>
-                    <input onChange={onChange} value={userData.username} onBlur={usernameValidator} type="text" name="username" placeholder="Username.." />
+                    <input data-testid='username' onChange={onChange} value={userData.username} onBlur={usernameValidator} type="text" name="username" placeholder="Username.." />
                     {errors.username && (<p className={styles['errorMessage']}>{errors.username}</p>)}
 
                     <label htmlFor="email"><span><i className="fa-solid fa-envelope"></i></span>Email</label>
-                    <input onChange={onChange} value={userData.email} onBlur={emailValidator} type="email" name="email" placeholder="example@example.com" />
+                    <input data-testid='email' onChange={onChange} value={userData.email} onBlur={emailValidator} type="email" name="email" placeholder="example@example.com" />
                     {errors.email && (<p className={styles['errorMessage']}>{errors.email}</p>)}
 
                     <label htmlFor="phone"><span><i className="fa-solid fa-phone-volume"></i></span>Phone</label>
-                    <input onChange={onChange} value={userData.phone} onBlur={phoneValidator} type="text" name="phone" id="phone" placeholder="+359 88 888 888" />
+                    <input data-testid='phone' onChange={onChange} value={userData.phone} onBlur={phoneValidator} type="text" name="phone" id="phone" placeholder="+359 88 888 888" />
                     {errors.phone && (<p className={styles['errorMessage']}>{errors.phone}</p>)}
 
                     <label htmlFor="password"><span><i className="fa-solid fa-lock"></i></span>Password</label>
-                    <input onChange={onChange} value={userData.password} onBlur={passwordValidator} type="password" name="password" placeholder="Password.." />
+                    <input data-testid='password' onChange={onChange} value={userData.password} onBlur={passwordValidator} type="password" name="password" placeholder="Password.." />
                     {errors.password && (<p className={styles['errorMessage']}>{errors.password}</p>)}
 
                     <label htmlFor="rePassword"><span><i className="fa-solid fa-lock"></i></span>Confirm Password</label>
-                    <input onChange={onChange} value={userData.rePassword} onBlur={rePasswordValidator} type="password" name="rePassword" placeholder="Confirm Password.." />
+                    <input data-testid='rePassword' onChange={onChange} value={userData.rePassword} onBlur={rePasswordValidator} type="password" name="rePassword" placeholder="Confirm Password.." />
                     {errors.rePassword && (<p className={styles['errorMessage']}>{errors.rePassword}</p>)}
 
                     <label htmlFor="gender"><span><i className="fa-solid fa-venus-mars"></i></span>Select Gender</label>
                     <div className={styles['gender']}>
-                        <input onChange={onChange} checked={userData.gender === 'female'} type="radio" id="female" name="gender" value="female" />
+                        <input onChange={onChange} checked={userData.gender === 'female'} type="radio" id="female" name="gender" value="female" data-testid='female' />
                         <label htmlFor="female">Female</label>
-                        <input onChange={onChange} checked={userData.gender === 'male'} type="radio" id="male" name="gender" value="male" />
+                        <input onChange={onChange} checked={userData.gender === 'male'} type="radio" id="male" name="gender" value="male" data-testid='male' />
                         <label htmlFor="male">Male</label>
                     </div>
 
                     <button className={styles['button-register']} disabled={(Object.values(errors).some(x => x)
-                        || (Object.values(userData).some(x => x == '')))}>Sign Up</button>
+                        || (Object.values(userData).some(x => x == '')))} data-testid='regBtn'>Sign Up</button>
 
                     {hasServerError && (<p className={styles.serverError}>{serverError}</p>)}
 
                 </form>
 
                 <div className={styles['last-p']}>
-                    <p>Already have an account? <Link to='/login'>Login here</Link></p>
+                    <p>Already have an account? <Link to='/login' data-testid='link'>Login here</Link></p>
                 </div>
             </div >
         </div>

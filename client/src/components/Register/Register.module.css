@@ -104,5 +104,7 @@ form .button-register {
 form .errorMessage {
     text-align: center;
     color: red;
-    width: 20em;
+    width: 21em;
+    margin-left: -0.5em;
+    margin-bottom: -1em;
 }

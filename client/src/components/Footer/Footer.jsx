@@ -3,18 +3,10 @@ import { useEffect, useState } from 'react';
 
 export default function Footer() {
 
-    const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-
+    const [currentYear, setCurrentYear] = useState(null);
     useEffect(() => {
-        const interval = setInterval(() => {
-            const newYear = new Date().getFullYear();
-            if (newYear !== currentYear) {
-                setCurrentYear(newYear);
-            }
-        }, 1000 * 60 * 60);
-        return () => clearInterval(interval);
-
-    }, [currentYear]);
+        setCurrentYear(new Date().getFullYear());
+    }, []);
 
     return (
         <footer className={styles['footer']}>

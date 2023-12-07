@@ -380,7 +380,7 @@ div.error p {
 }
 
 .btn {
-    margin-bottom: 10px;
+    margin-bottom: 2em;
 }
 
 button.btn {
@@ -570,5 +570,10 @@ footer {
 
     .navbar-nav li {
         padding-left: 20px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    #offer-trip-page{
+        height: auto;
     }
 }

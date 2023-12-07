@@ -33,13 +33,13 @@
 .model {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0.3em;
 }
 
 .boat-info h5 {
     font-size: 0.5em;
     border-bottom: 0.2em solid lightblue;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
 }
 
 .boat-info .icon {
@@ -219,4 +219,42 @@
 
 textarea {
     resize: none;
+}
+
+@media screen and (max-width: 1280px) {
+    .details-title {
+        font-size: 3em;
+        padding-top: 1.5em;
+    }
+
+    .picture-desc img {
+        width: 32em;
+        height: 20em;
+    }
+
+    .boat-info h5 {
+        font-size: 0.4em;
+    }
+
+    .boat-info .icon {
+        color: white;
+        font-size: 0.5em;
+    }
+
+    .port,
+    .passengers,
+    .calendar,
+    .model {
+        gap: 0em;
+    }
+
+    .boat-info {
+        width: 77%;
+    }
+
+    .trip-desc textarea {
+        width: 20em;
+        height: 9em;
+        font-size: 1em;
+    }
 }

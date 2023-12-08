@@ -91,6 +91,7 @@ export default function Profile() {
                                 ))}
                             </ul>
                             : <div className={styles['no-boats']}>
+                                <i className="fa-solid fa-anchor-circle-xmark"></i>
                                 <h4>No boats!</h4>
                             </div>
                         }
@@ -117,6 +118,7 @@ export default function Profile() {
                                 ))}
                             </ul>
                             : <div className={styles['no-boats']}>
+                                <i className="fa-regular fa-calendar-xmark"></i>
                                 <h4>No bookings yet!</h4>
                             </div>
                         }

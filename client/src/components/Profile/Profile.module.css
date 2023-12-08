@@ -119,3 +119,8 @@ img {
     height: 50vh;
     padding-top: 5em;
 }
+
+.no-boats i{
+    font-size: 2em;
+    color:black;
+}

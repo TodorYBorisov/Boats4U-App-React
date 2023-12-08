@@ -30,6 +30,10 @@ Deployment Details:
 Deployment Platforms Used:
 - Front-End Deployment [Vercel](https://vercel.com/). The front-end of my application is deployed using Vercel, a powerful platform for effortlessly deploying React applications. This ensures a reliable and performant hosting environment for our user-facing interface
 - Backend Deployment [Render](https://render.com/). For the backend deployment, I used leveraged Render, a robust platform capable of hosting and managing server-side components. Render ensures the smooth functioning and accessibility of my backend infrastructure
+
+- Notes
+    - The deployed version may be subject to periodic updates and maintenance
+    - For optimal user experience, we suggest utilizing the most recent Mozilla Firefox or Chrome version, along with a desktop resolution set at either 1920x1080, 1280x800, or 1440x900      
   
 ## Features
 <ins>Public part visible without authentication:</ins>

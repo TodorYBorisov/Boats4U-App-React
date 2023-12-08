@@ -103,7 +103,7 @@
     cursor: pointer;
     background-color: red;
     margin-right: 1em;
-    width: 6em;
+    width: 6.5em;
 }
 
 .delete {
@@ -124,7 +124,7 @@
     margin-top: 1em;
     cursor: pointer;
     background-color: rgb(32, 129, 178);
-    width: 6em;
+    width: 6.5em;
 }
 
 .edit {

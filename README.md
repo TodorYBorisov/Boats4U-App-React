@@ -33,7 +33,7 @@ Deployment Platforms Used:
 
 - Notes
     - The deployed version may be subject to periodic updates and maintenance
-    - For optimal user experience, we suggest utilizing the most recent Mozilla Firefox or Chrome version, along with a desktop resolution set at either 1920x1080, 1280x800, or 1440x900      
+    - For an optimal user experience, I recommend using the latest version of Mozilla Firefox or Chrome, and a desktop resolution of 1920x1080, 1280x800 or 1440x900      
   
 ## Features
 <ins>Public part visible without authentication:</ins>

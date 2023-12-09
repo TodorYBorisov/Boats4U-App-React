@@ -37,7 +37,11 @@ export default function Edit() {
     const onSubmit = (event) => {
         event.preventDefault();
 
-        dataService.editBoat(formData._id, formData)
+        const trimmedformData = Object.fromEntries(
+            Object.entries(formData).map(([key, value]) => [key, typeof value === 'string' ? value.trim() : value])
+        );
+        
+        dataService.editBoat(formData._id, trimmedformData)
             .then(() => {
                 navigate(`/boats/details/${formData._id}`);
             })

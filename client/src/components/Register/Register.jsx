@@ -30,7 +30,10 @@ export default function Register() {
         event.preventDefault();
 
         try {
-            const { username, email, phone, gender, password } = userData;
+            const trimmedUserData = Object.fromEntries(
+                Object.entries(userData).map(([key, value]) => [key, value.trim()])
+            );
+            const { username, email, phone, gender, password } = trimmedUserData;
             const user = await userServices.register(username, email, phone, gender, password);
             setAuth(user);
 

@@ -28,15 +28,19 @@ export default function Search() {
         setLoading(true);
         dataService.getAllData()
             .then(result => {
+                const trimmedsearchValue = Object.fromEntries(
+                    Object.entries(searchValue).map(([key, value]) => [key, typeof value === 'string' ? value.trim() : value])
+                );
+
                 const filteredBoats = result.filter(boat =>
-                    boat.startPoint.toLowerCase().includes(searchValue.search.toLowerCase()) ||
-                    boat.endPoint.toLowerCase().includes(searchValue.search.toLowerCase()) ||
-                    boat.model.toLowerCase().includes(searchValue.search.toLowerCase()) ||
-                    boat.description.toLowerCase().includes(searchValue.search.toLowerCase()) ||
-                    (boat.price.toString().includes(searchValue.search.toLowerCase())) ||
-                    (boat.year.toString().includes(searchValue.search.toLowerCase())) ||
+                    boat.startPoint.toLowerCase().includes(trimmedsearchValue.search.toLowerCase()) ||
+                    boat.endPoint.toLowerCase().includes(trimmedsearchValue.search.toLowerCase()) ||
+                    boat.model.toLowerCase().includes(trimmedsearchValue.search.toLowerCase()) ||
+                    boat.description.toLowerCase().includes(trimmedsearchValue.search.toLowerCase()) ||
+                    (boat.price.toString().includes(trimmedsearchValue.search.toLowerCase())) ||
+                    (boat.year.toString().includes(trimmedsearchValue.search.toLowerCase())) ||
                     (typeof boat.date === 'string' &&
-                        boat.date.includes(searchValue.search.toLowerCase())
+                        boat.date.includes(trimmedsearchValue.search.toLowerCase())
                     )
                 );
 

@@ -7,11 +7,11 @@ import './index.css';
 import ErrorBoundary from './components/Guards/ErrorBoundary.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
+    //<React.StrictMode>
         <ErrorBoundary>
             <BrowserRouter>
                 <App />
             </BrowserRouter>
         </ErrorBoundary>
-    </React.StrictMode>,
+    //</React.StrictMode>,
 );

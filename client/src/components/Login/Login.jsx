@@ -26,7 +26,11 @@ export default function Login() {
         event.preventDefault();
 
         try {
-            const { email, password } = userData;
+            const trimmedUserData = Object.fromEntries(
+                Object.entries(userData).map(([key, value]) => [key, value.trim()])
+            );
+
+            const { email, password } = trimmedUserData;
             const user = await userServices.login(email, password);
             setuserData(user);
             setAuth(user);

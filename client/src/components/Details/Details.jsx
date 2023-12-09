@@ -28,9 +28,6 @@ export default function Details() {
                 navigate('/boats');
 
             } catch (error) {
-                if(error.code == 404){
-                    navigate('/NotFound');
-                }
                 console.log('Error deleting data:', error);
             }
         }
@@ -44,6 +41,9 @@ export default function Details() {
                 setDetails(data);
             })
             .catch(error => {
+                if(error.code == 404){
+                    navigate('/NotFound');
+                }
                 console.error('Error fetching data:', error);
             });
 
@@ -56,7 +56,7 @@ export default function Details() {
             })
             .catch(error => console.log(error));
 
-    }, [id, auth]);
+    }, [id, auth, navigate]);
 
     const onLikeClick = () => {
         dataService.like(auth._id, id)

@@ -28,6 +28,9 @@ export default function Details() {
                 navigate('/boats');
 
             } catch (error) {
+                if(error.code == 404){
+                    navigate('/NotFound');
+                }
                 console.log('Error deleting data:', error);
             }
         }
